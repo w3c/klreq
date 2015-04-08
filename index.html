@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Requirements for Hangul Text Layout and Typography</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "klreq",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          // subtitle   :  "an excellent document",
+
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2013-05-14",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://w3c.github.com/klreq/",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+         // extraCSS:             [  "local.css"],
+
+          // alternative formats
+		  alternateFormats:  [
+              { uri: "ko/", label: "Korean version" },
+          ],
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Richard Ishida", url: "",
+                company: "W3C", companyURL: "" },
+          ],
+
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          authors:  [
+              { name: "Soon-Bum Lim", url: "",
+                company: "Sookmyung Women's University", companyURL: "" },
+              { name: "Wu-Jin Sim", url: "",
+                company: "Invited Expert", companyURL: "" },
+              { name: "Yong-Je Lee", url: "",
+                company: "Kaywon School of Art &amp; Design", companyURL: "" },
+              { name: "Dongsun Nam", url: "",
+                company: "Hancom Inc.", companyURL: "" },
+              { name: "HyunYoung Kim", url: "",
+                company: "DAOUinCUBE, Inc.", companyURL: "" },
+              { name: "YongHo Lim", url: "",
+                company: "School of Visual Art", companyURL: "" },
+          ],
+          
+          // name of the WG
+          wg:           "Internationalization Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/International/core/",
+          
+          // name (without the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-i18n-cjk",
+		  
+		  noRecTrack: true,
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/32113/status",
+      };
+    </script>
+<link rel="stylesheet" href="local.css" type="text/css" />
+  </head>
+  <body>
+  <p id="sotd">This document describes requirements for general Korean language/Hangul text layout realized with technologies like CSS, SVG and XSL-FO. The document is mainly based on a project to develop the international standard for Korean text layout, and was originally developed by Korean typographic experts and standardization experts in Korean, then translated to English under the guidance of the authors. The <a href="korean/">Korean version</a> of this document is also available, but the English version is the authoritative version. The Working Group expects this document to become a Working Group Note.</p>
+    <section id='abstract'>
+      This document describes requirements for general Korean language/Hangul text layout and typography realized with technologies like CSS, SVG and XSL-FO. The document is mainly based on a project to develop the international standard for Korean text layout.
+  </section>
+    
+<section id="intro">
+<h2>Introduction</h2>
+<section id="purpose">
+  <h3>Purpose of this Document</h3>
+<p>Every cultural group has its own language and writing system. Especially between East and West, the difference is great. Thus to digitize the writing system, a lot of data and technology is needed that accurately represents the language and writing system. </p>
+<p>The purpose of this document is to explain the important differences between the Korean writing system and  others, in order to digitize it. However this document does not provide the solution for actual implementations or problems, but only describes the basic information that should be treated as important issues.</p>
+</section>
+<section id="how-developed">
+  <h3>How this Document was Created</h3>
+  <p>This document was created by discussing the Korean related issues through Korea's Standard Infrastructure Enhancement Program and surveying needs from actual users and technical experts. </p>
+  <p>The following types of experts were involved in the creation of this document:</p>
+  <ol>
+  <li>Korean typography experts</li>
+  <li>International and Domestic (Korea) Standardization Experts</li>
+  <li>Academic and Industry Experts</li>
+  </ol>
+  <p>The contents of this document are related to the Korean writing system, so all discussions took place in Korean, and were then translated into English once the document had been finished.</p>
+  <p>The technical terms for discussing and describing the Korean writing system were carefully selected after considering  potential differences in nuance even if a direct translation exists, and in some parts  they were described in both languages so the discussion can be continued in the future. Also many figures are included to promote understanding for  certain parts that are hard to describe in English.</p>
+</section>
+<section id="basicprinciples">
+  <h3>Basic Principles for Document Development</h3>
+  <p>This document describes the characteristics of the Korean language system along the lines of the  following principles.</p>
+  <ol>
+    <li>
+      <p>It does not cover every issue of  Korean typography, but only the important differences from the Western language systems.</p>
+    </li>
+    <li>
+      <p>All text in the figures is in Korean, but the technical aspects of actual implementation are not covered by this document.</p>
+    </li>
+    <li>
+      <p>In order to help readers' understanding of how Korean is used, typical real life examples are provided to explain the core combination properties.</p>
+    </li>
+    <li>
+      <p>Text layout rules and  recommendations for readable design are different matters, but it is hard to discuss these two aspects separately. In this document, these two issues are separated carefully.</p>
+    </li>
+  </ol>
+</section>
+<section id="structure">
+  <h3>The Structure of this Document</h3>
+  <p>This document consists of six parts as below:</p>
+  <ol>
+    <li> Introduction    </li>
+    <li> Hangul fonts    </li>
+    <li> Character typography    </li>
+    <li> Paragraph typography    </li>
+    <li> Components besides paragraphs    </li>
+    <li> Page layout    </li>
+  </ol>
+</section>
+</section>
+
+
+<section id="fonts">
+<h2>Hangul Fonts</h2>
+
+<section id="font-overview">
+<h3>Hangul Font Overview</h3>
+
+<p>The characters used in Hangul Fonts consist of the following: Hangul characters, punctuation marks, Latin alphabetic characters, numbers, and special characters.</p>
+<section id="hangulcodes">
+  <h4>Hangul Code Ranges in Unicode</h4>
+  <p>The Hangul code ranges in Unicode consist of precomposed Hangul syllables and the Hangul 'Jamo' alphabet. (Refer to Appendix A for the code table.)</p>
+  <ul>
+    <li>Hangul Syllables: U+AC00 ~ U+D7A3 </li>
+    <li>Hangul Jamo: U+1100 ~ U+11FF </li>
+    <li>Hangul Jamo for Compatibility: U+3130 ~ U+318E </li>
+    <li>Hangul Jamo Extended-A: U+A960 ~ U+A970 </li>
+    <li>Hangul Jamo Extended-B: U+D780 ~ U+D7FB </li>
+  </ul>
+</section>
+<section id="fonts-punctuationcodes">
+  <h4>Hangul Punctuation Mark Code Ranges based on Unicode</h4>
+  <p>Following punctuation marks are used in a Hangul environment. (Refer to Appendix A for the code table.)</p>
+  <ul>
+    <li>Basic Latin (U+0020~U+007F): Latin alphabet and numerals</li>
+    <li>General Punctuation (U+2010~)</li>
+    <li>Superscripts and Subscripts (U+2070~)</li>
+    <li>Currency Symbols (U+20A0~)</li>
+    <li>Letterlike Symbols (U+2100~)</li>
+    <li>Number Forms (U+2050~)</li>
+    <li>Arrows (U+2190~)</li>
+    <li>Mathematical Operators (U+2200~)</li>
+    <li>Enclosed Alphanumerics (U+2460~)</li>
+    <li>Box Drawing (U+2500~)</li>
+    <li>Block Elements (U+2580~)</li>
+    <li>Geometric Shapes (U+25A0~)</li>
+    <li>Miscellaneous Symbols (U+2600~)</li>
+    <li>Dingbats (U+2700~)</li>
+    <li>CJK Symbols and Punctuation (U+3000~)</li>
+    <li>Enclosed CJK Letters and Months (U+3200~)</li>
+    <li>CJK Compatibility Ideographs (U+F900~) </li>
+    <li>CJK Compatibility Symbols and Punctuation for Vertical Writing (U+FE30~FE48)</li>
+  </ul>
+</section>
+<section id="fonts-horizvertpunct">
+  <h4>Hangul Punctuation Marks in Horizontal and Vertical Writing</h4>
+  <p>CJK Symbols and Punctuation (U+3008~U+300F) are used by default. However, in the case of punctuation, half-width punctuation (pause (comma) U+002C, full stop (period) U+002E) is used for horizontal writing, and full-width punctuation (ideographic comma U+3001, ideographic full stop U+3002) are used for vertical writing.</p>
+  
+  <figure>
+  <img src="images/2-1.png" alt="" />
+  <figcaption>CJK Symbols and Punctuation (U+3000~) for Horizontal Writing</figcaption>
+  </figure>
+  <figure> <img src="images/2-2.png" alt="" />
+    <figcaption>CJK Symbols and Punctuation (U+FE30~) for Vertical Writing</figcaption>
+  </figure>
+</section>
+</section>
+<section id="fonts-types">
+  <h3>Hangul Font Types</h3>
+  <p>Hangul uses both fixed width and proportional width fonts.</p>
+  <section id="fonts-proportional">
+    <h4>Proportional Width Hangul Fonts</h4>
+    <p>In this mode, Hangul (Hangul Syllables U+AC00 ~ U+D7A3) glyphs use 'character frame width proportional to each letter face width'.</p>
+  </section>
+  <section id="fonts-fixedwidth">
+    <h4>Fixed Width Hangul Fonts</h4>
+    <p>In this mode, Hangul (Hangul Syllables U+AC00 ~ U+D7A3) glyphs use fixed values for character frame width.</p>
+  </section>
+  </section>
+  <section id="fonts-letterfaceposn">
+    <h3>'Letter Face Position in Character Frame' Standard</h3>
+    <p>Standardization of 'letter face position in character frame' of fixed width Hangul fonts improves the compatibility of the space between Hangul font characters. (The relation between  each side's spaces remains even when the Hangul font is changed. It prevents a paragraph's left outline being scattered when the opening quotation mark or parenthesis at the line head has an unexpected space).</p>
+    <figure> <img src="images/2-3.png" alt="" />
+      <figcaption>Letter face position in the character frame </figcaption>
+    </figure>
+  <section id="fonts-faceposnparens">
+    <h4>Arrangement of 'Letter Face Position in Character Frame' for Full Width Parentheses</h4>
+    <p>In horizontal writing, the letter face of a full width opening parenthesis is placed on the right end of the character frame, and the left space is considered a user controlled area. In vertical writing, the letter face of a full width opening parenthesis is placed on the bottom end of character frame, and the space is considered a user controlled area.</p>
+    <figure> <img src="images/2-5.png" alt="" />
+      <figcaption>Full-width opening parentheses and quotation marks positioned in the character frame （｛［〔《「『 ' &quot; (U+FF08, U+FF5B, U+FF3B, U+3014, U+300A, U+300C, U+300E, U+ 02BB, U+201C) </figcaption>
+    </figure>
+    <p>In horizontal writing, the letter face of a full width closing parenthesis is placed on the left end of the character frame, and the space is considered a user controlled area. In vertical writing, the letter face of a full width closing parenthesis is placed on the top end of the character frame, and the space is considered a user controlled area.</p>
+    <figure> <img src="images/2-4.png" alt="" />
+      <figcaption>Full-width closing parentheses and quotation marks positioned in the character frame ）｝］〕》」』' &quot; (U+FF09, U+FF5D, U+FF3D, U+3015, U+300B, U+300D, U+300F, U+02BC, U+201D) 
+
+      </figcaption>
+    </figure></section>
+  <section id="fonts-facepos-punc">
+    <h4>Arrangement of 'Letter Face Position in Character Frame' for Punctuation</h4>
+    <p>The letter face of punctuation marks is placed at the left end of the character frame. The remaining space is available for use as a controllable margin by the font user.</p>
+    <figure> <img src="images/2-6.png" alt="" />
+      <figcaption>Punctuation marks positioned in the character frame . , 。、(U+002E, U+002C, U+3002, U+3001)</figcaption>
+    </figure>
+  </section>
+  <section id="fonts-facepos-other">
+    <h4>Arrangement of 'Letter Face Position in Character Frame' for Other Glyphs</h4>
+    <p>Other glyphs are designed with either proportional or fixed width.</p>
+  </section>
+  </section>
+  <section id="fonts-kerning">
+    <h3>Kerning for Hangul Fonts</h3>
+    <p>This is a typographic option for adjusting the kerning between all characters or character classes used in a Hangul environment. </p>
+
+<section id="chars-kerning-adjust">
+<h4>Adjustment of Kerning for Hangul Fonts</h4>
+    <p>Hangul font kerning is adjusted by considering the inner space and contour region of Hangul syllables that are composed of Hangul Jamos.</p>
+    <figure> <img src="images/2-30.png" alt="" />
+      <figcaption>Adjustment of kerning for Hangul fonts</figcaption>
+    </figure>
+  </section>
+
+<section id="chars-kerning-group">
+<h4>Group Kerning for Hangul Fonts</h4>
+    <p>Group kerning can be applied for efficient adjustment of kerning for the 11,172 Hangul syllables. In order to apply Hangul group kerning, kerning groups are defined first, then groups are paired.</p>
+    <figure> <img src="images/2-31.png" alt="" />
+      <figcaption>Defining kerning groups for Hangul fonts</figcaption>
+    </figure>
+    <figure> <img src="images/2-32.png" alt="" />
+      <figcaption>Pairing kerning groups for Hangul fonts</figcaption>
+    </figure>
+  </section>
+
+</section>
+</section>
+
+<section id="characters">
+  <h2>Typography for characters</h2>
+
+<p>Typographic options include the control of characters and the control of paragraphs. In this chapter, the font itself and options in the system for controlling the font are described.</p>
+
+<section id="chars-charclasses">
+<h3>About Character Classes</h3>
+<p>Characters or symbols with same characteristics in the typographic environment are classified, then writing options are applied for each character class.</p>
+
+
+<section id="chars-ttc">
+<h4>Typical Typographic Characteristics</h4>
+
+<ol>
+<li>Full-width, half-width, and proportional-width for character frame width. </li>
+<li>Character groups that cannot be placed at the line head.</li>
+<li>Character groups that cannot be placed at the line end.</li>
+<li>Inter-character space between the character groups. </li>
+</ol>
+
+</section>
+<section id="chars-grouping">
+  <h4>Examples for Grouping by Typographic Characteristic of Characters and Symbols</h4>
+<p>In a Hangul environment, characters and symbols are classified by typographic characteristics, into 32 classes.</p>
+    <div class="indent"> 
+  <dl>
+  <dt>cl1. Hangul Opening Parenthesis</dt>
+  <dd>（｛［〔《「『' " (U+FF08, U+FF5B, U+FF3B, U+3014, U+300A, U+300C, U+300E, U+02BB, U+02BB)</dd>
+  <dt>cl2. Hangul Closing Parenthesis</dt>
+  <dd>）｝］〕》」』' &quot;(U+FF09, U+FF5D, U+FF3D, U+3015, U+300B, U+300D, U+300F, U+02BC, U+02BC)</dd>
+  <dt>cl3. Latin Alphabet Opening Parenthesis</dt>
+  <dd>( { [ (U+0028, U+007B, U+005B)</dd>
+  <dt>cl4. Latin Alphabet Closing Parenthesis</dt>
+  <dd>) } ] (U+0029, U+007D, U+005D)</dd>
+  <dt>cl5. Hyphen Symbols</dt>
+  <dd>‐-—〜(U+2010, U+002D, U+2014, U+FF5E)</dd>
+  <dt>cl6. Dividing Punctuation Marks</dt>
+  <dd>？！ (U+FF1F, U+FF01)</dd>
+  <dt>cl7. Middle Dots</dt>
+  <dd>· : ; ： ；(U+00B7, U+003A, U+FF1A, U+FF1B)</dd>
+  <dt>cl8. Period Marks (Full Stops)</dt>
+  <dd>. 。．(U+002E, U+3002, U+FF0E, U+3001, U+2014, U+FF0C)</dd>
+  <dt>cl9. Commas (Pause Marks)</dt>
+  <dd> ,、(U+3001, U+2014, U+FF0C)</dd>
+  <dt>cl10. Inseparable Characters</dt>
+  <dd>— … ‥ (U+2014, U+2026, U+2025)</dd>
+  <dt>cl11. Ditto Mark</dt>
+  <dd>〃(U+3003)</dd>
+  <dt>cl12. Prolonged Sound Mark</dt>
+  <dd>ー (U+30FC)</dd>
+  <dt>cl13. Prefixed Abbreviations</dt>
+  <dd>$, ¥ </dd>
+  <dt>cl14. Postfixed Abbreviations</dt>
+  <dd>%, ℃</dd>
+  <dt>cl15. Spaces</dt>
+  <dd>  (U+3000, U+2002)</dd>
+  <dt>cl16. Precomposed Hangul</dt>
+  <dd>(U+AC00~U+D7A3)</dd>
+  <dt>cl17. Hangul Jamo</dt>
+  <dd>(U+3130~, U+A960~, U+A960~)</dd>
+  <dt>cl18. Math Symbols</dt>
+  <dd>＝≠＜＞≦≧⊆⊇∪∩</dd>
+  <dt>cl19. Math Operators</dt>
+  <dd>＋－÷×</dd>
+  <dt>cl20. Hanja (CJK Ideographic Characters)</dt>
+  <dd> (U+F900~)</dd>
+  <dt>cl21. Proportional Width Latin Alphabet</dt>
+  <dd>(U+0041~U+005A, U+0061~U+007A)</dd>
+  <dt>cl22. Full-Width Unit Symbols</dt>
+  <dd>㎥; mainly used for vertical writing</dd>
+  <dt>cl23. Latin Alphabet Space</dt>
+  <dd> (U+0020)</dd>
+  <dt>cl24. Latin Alphabet Characters</dt>
+  <dd>(U+002C~… ~U+261E)</dd>
+  <dt>cl25. Proportional-Width Numerals</dt>
+  <dd>(U+0030~U+0039)</dd>
+  <dt>cl26. Fixed Width Half-width Numerals </dt>
+  <dd>(U+0030~U+0039)</dd>
+  <dt>cl27. Fixed Width Full-width Numerals</dt>
+  <dd> (U+0020~U+007F)</dd>
+  <dt>cl28. Fixed Width Full-width Numerals</dt>
+  <dd>(U+FF21~U+FF5A)</dd>
+  <dt>cl29. Line Head Characters (Relative Value)</dt><dd></dd>
+  <dt>cl30. Line End Characters (Relative Value)</dt><dd></dd>
+  <dt>cl31. Paragraph Start Characters (Relative Value)</dt><dd></dd>
+  <dt>cl32. Specific Character Entered (User Defined)</dt><dd></dd>
+  </dl>
+  </div>
+</section>
+<section id="chars-placement">
+  <h4>Placement Mode for Each Character Class</h4>
+  <ol>
+    <li>Rule setting: For each character class, set whether it can or not be placed at the line head or end. </li>
+    <li>Space setting between character classes: Set up spaces between each character class.</li>
+  </ol>
+</section>
+</section>
+<section id="chartypes">
+  <h3>Character Types and Typographic Rules Used in Hangul Environment</h3>
+  <section id="chartypes-inhangul">
+    <h4>Character Types in Hangul Writing</h4>
+    <ol>
+      <li>Hangul Compatibility Jamo (U+3130~) </li>
+      <li>Enclosed CJK Characters and Numerals (U+3200~)</li>
+      <li>Hangul Jamo Extended-A (U+A960~)</li>
+      <li>Hangul Precomposed Syllables (U+AC00~U+D7A3) </li>
+      <li>Hangul Jamo Extended-B (U+D7B0~)</li>
+      <li>CJK Compatibility Ideographs (U+F900~)</li>
+    </ol>
+</section>
+  <section id="chartypes-intercharspace">
+    <h4>Inter-Character Spacing for Hangul, Hanja, Kana, etc</h4>
+    <p>Characters like Hangul, Hanja, or Kana have zero space between characters by default. Additionally, there are inter-character space settings such as settings such as narrower or wider, to support double-sided justification.</p></section></section>
+    
+    <section id="hangulromanmix">
+  <h3>Hangul and Latin Mixed Writing (Including Partial Horizontal Writing in Vertical Writing)</h3>
+  <p>Mixed writing is a Hangul sentence with Latin alphabetic characters, numbers, or symbols inside.</p>
+  <section id="mixed-horiz">
+    <h4>Characters for Horizontal Hangul and Latin Mixed Writing</h4>
+    <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used.    </p>
+    <figure> <img src="images/3-1.png" alt="" />
+      <figcaption>Example of horizontal mixed writing</figcaption>
+    </figure>
+  </section>
+  <section id="mixed-vertical">
+    <h4>Characters for Vertical Hangul and Latin Mixed Writing</h4>
+    <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used. </p>
+    <ol>
+    <li>
+    	<p>Each Latin character is placed vertically.</p>
+        <figure> <img src="images/3-2.png" alt="" />
+          <figcaption>Example of vertical Latin in mixed writing.</figcaption>
+        </figure>
+        </li>
+    <li>
+      <p>Latin characters are placed 90 degrees rotated.</p>
+      <figure> <img src="images/3-3.png" alt="" />
+        <figcaption>Example of vertical Latin rotated in mixed writing.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <p>Partial horizontal writing in vertical writing; two-digit numbers are rotated 90 degrees as a group, then aligned by the center of the line. Used mainly for two-digit numbers.</p>
+      <figure> <img src="images/3-4.png" alt="" />
+        <figcaption>Example of partial horizontal writing in vertical writing.</figcaption>
+      </figure>
+    </li>
+     </ol>
+  </section>
+</section>
+<section id="supsubscript">
+  <h3>Superscripts and Subscripts</h3>
+  <p>Superscripts and subscripts are placed next to a base character. Superscripts and subscripts are used for SI units, numeric·chemical formulae, footnote numbers, etc. The space between the base character and the superscript or subscript is zero by default.</p>
+  <p>Usually the size of the superscript or subscript is 60~70% of the size of the base character.</p>
+  <figure> <img src="images/3-5.png" alt="" />
+    <figcaption>Examples of superscript·subscript</figcaption>
+  </figure>
+</section>
+<section id="signmatharrange">
+  <h3>Arrangement of Signs, Math Symbols</h3>
+  <ol>
+  <li>The space between signs, math symbols and Hangul characters is a user defined space (1/8-width space recommended) by default.</li>
+  <li>The space between signs or math symbols and numerals or Latin alphabetic text is zero by default.</li>
+  </ol>
+</section>
+</section>
+
+
+<section id="paragraphs">
+<h2>Typography for paragraphs</h2>
+
+<p>Typographic options include the control of characters and the control of paragraphs. This issue describes the writing/layout/editing system settings that control the font, not the font itself.</p>
+<section id="para-direction">
+  <h3>Writing Direction (Horizontal Writing, Vertical Writing)</h3>
+  <section id="para-writingdirection">
+    <h4>Writing Direction in Hangul Writing</h4>
+    <p>Hangul is written both horizontally and vertically.</p>
+    <figure> <img src="images/4-1.png" alt="" />
+      <figcaption>Horizontal writing and vertical writing (arrow indicates the text direction)</figcaption>
+    </figure>
+  </section>
+  <section id="para-diffs">
+    <h4>Major Differences between Horizontal Writing and Vertical Writing</h4>
+	<ol>
+    <li>The direction of characters, lines, columns, and pages is as follows.
+      <ul>
+        <li><p>In  vertical writing:</p>
+        	<p>Characters progress from top to bottom, and lines progress from right to left.</p>
+            <p>Columns progress from top to bottom, pages progress from right to left, and pages are turned from left to right.</p>
+            <figure> <img src="images/4-2.png" alt="" />
+              <figcaption>Character direction in vertical writing.</figcaption>
+            </figure>
+        </li>
+        <li>
+          <p>In  horizontal writing:</p>
+          <p>Characters progress from left to right, and lines progress from top to bottom.</p>
+          <p>Columns progress from left to right, and pages progress from left to right, and pages are turned from right to left.</p>
+          <figure> <img src="images/4-3.png" alt="" />
+            <figcaption>Character direction in horizontal writing.</figcaption>
+          </figure>
+        </li>
+        </ul>
+    </li>
+    <li>The direction of Latin alphabetic characters and numerals inserted in sentences is as below:
+          <p>Regular direction is used in horizontal writing, and there are three ways of arranging text in vertical writing.</p>
+      <ul>
+        <li>
+          <p>Each character is arranged in the same direction as the Hangul characters.</p>
+          <figure> <img src="images/4-4.png" alt="" />
+            <figcaption>Character arrangement in vertical writing – normal arrangement.</figcaption>
+        </figure>
+        </li>
+        <li>
+          <p>Characters are rotated  90 degrees, mainly for Latin alphabet words.</p>
+          <figure> <img src="images/4-5.png" alt="" />
+            <figcaption>Character arrangement in vertical writing – 90-degree-rotation.</figcaption>
+      </figure>
+        </li>
+        <li>
+          <p>Arrangement  the same as Hangul characters. Two digit numbers  rotated 90 degrees as a group, then aligned by the center of a line.</p>
+          <figure> <img src="images/4-6.png" alt="" />
+            <figcaption>Character arrangement in vertical writing – composed character arrangement.</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Captions or titles of tables, figures, etc. are rotated clockwise or counter-clockwise. </p>
+      <figure> <img src="images/4-7.png" alt="" />
+        <figcaption>90 degree rotated table and table caption in vertical writing.</figcaption>
+      </figure>
+      <ul>
+        <li>
+          <p>In vertical writing, the caption top of tables, figures, etc. is positioned to the right side of the page. If the caption is in a horizontal direction, the caption top is positioned to the top side of the page.</p>
+          <figure> <img src="images/4-8.png" alt="" />
+            <figcaption>Example of a figure using the top side of the page in vertical writing.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>In horizontal writing, the caption top of tables, figures, etc. is positioned to the left side of the page. If the caption is in a horizontal direction, the caption top is positioned to the top side of the page.</p>
+          <figure> <img src="images/4-9.png" alt="" />
+            <figcaption>90-degree-rotated table and table caption in horizontal writing.</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Line adjustment; it is possible to do line adjustment regardless of columns in multi-column layout. </p>
+      <ul>
+        <li>
+          <p>Vertical writing, align vertical lines in each column.</p>
+          <figure> <img src="images/4-10.png" alt="" />
+            <figcaption>Example of line adjustment in vertical writing</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Horizontal writing, align horizontal lines in each column.</p>
+          <figure> <img src="images/4-11.png" alt="" />
+            <figcaption>Example of line adjustment in horizontal writing.</figcaption>
+          </figure>
+        </li>
+    </ul>
+    </li>
+    </ol>
+  </section>
+</section>
+<section id="paraadjust">
+  <h3> Paragraph Adjustment</h3>
+  <section id="line-head-indent">
+    <h4>Line Head Indentation</h4>
+    <p>Indentation, by emptying the beginning of a line when a new paragraph starts, is applied so that the division into paragraphs is shown clearly.  The value of the character width in the specific paragraph is used as the default unit for indentation.</p>
+    <ol>
+      <li>
+        <p>Line head indentations on every paragraph. The most common writing mode. </p>
+        <figure> <img src="images/4-12.png" alt="" />
+          <figcaption>Indentation on the first lines in horizontal writing.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>No indentation on all paragraphs. More suitable for horizontal writing where the length of lines is shorter, relatively, than vertical writing.</p>
+        <figure> <img src="images/4-13.png" alt="" />
+          <figcaption>No indentation on all lines in horizontal  writing.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>Indentation  on the first line of every paragraph, but not applied to the first paragraph of a page or the paragraph right after a title.</p>
+        <figure> <img src="images/4-14.png" alt="" />
+          <figcaption>No indentation on the first line in horizontal writing.</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section id="other-indent">
+    <h4>Indentation besides Line Head Indentation</h4>
+    <p>Indentation is applied to all lines besides the first line of a paragraph for bulleted list, numbered list, etc.</p>
+  </section>
+  <section id="inward-indent">
+    <h4>Inward Paragraph Indentation and Outward Paragraph Indentation</h4>
+    <p>Inward paragraph indentation is writing placed inside of the page body by a certain number of characters, and outward paragraph indentation is writing placed outside of the page body.</p>
+    <figure> <img src="images/4-15.png" alt="" />
+      <figcaption>Inward and outward paragraph indentation in horizontal writing.</figcaption>
+    </figure>
+  </section>
+  <section id="para-line-align">
+    <h4>Paragraph Line Alignment</h4>
+    <p>Line alignment means aligning a line to the position of a certain character.</p>
+    <ol>
+    <li>
+      <p>Center Alignment: apply zero or a specified value to the space between adjacent characters, and equally apply the same amount of space at both sides of the line. Align to the center of the line.</p>
+    </li>
+    <li>
+      <p>Line Head Alignment (left side alignment in horizontal writing): apply zero or a specified value to the space between adjacent characters, and align to the line head. If the number of characters in the last line is not enough to be a full line, fill from the line head and empty the line end.</p>
+    </li>
+    <li>
+      <p>Line End Alignment (right side alignment in horizontal writing): apply zero or a specified value to the space between adjacent characters, and align to the line end. If the number of characters in the last line is not enough to be a full line, fill from the line end and empty the line head.</p>
+    </li>
+    <li>
+      <p>Even Space Alignment: apply zero or a specified value to the space between adjacent characters, and align by the line head and the line end. If the number of characters in the last line is not enough to be a full line, fill from the line head and empty the line end.</p>
+    </li>
+    <li>
+      <p>Even Space Alignment with Forced End: apply zero or a specified value to the space between adjacent characters, then align by the line head and the line end. If the number of characters in the last line is not enough to be a full line, fill from the line head to the line end by force-adjusting the space between characters.</p>
+      <figure> <img src="images/4-16.png" alt="" />
+        <figcaption>Paragraph Line Alignment.</figcaption>
+      </figure>
+    </li>
+    </ol>
+  </section>
+  <section id="last-line-indent">
+    <h4>Last Line of Paragraph Adjustment</h4>
+    <p>This is a process to avoid a situation when the number of characters in the last line of a paragraph is lower than the recommended minimum number. This is also called the widow process.</p>
+  </section>
+</section>
+<section id="punc-process">
+  <h3> Writing Process for Punctuation Marks, etc.</h3>
+  <section id="writing-dir-mark">
+    <h4>Changing Punctuation Marks Depending on Writing Direction</h4>
+    <ol>
+      <li>
+        <p>Periods and commas.</p>
+        <ol><li>In vertical writing; 。[U+3002] 、 [U+3001]</li>
+          <li>In horizontal writing; . [U+002E]  , [U+002C] ．[U+FF0E] ，[U+FF0C]</li>
+        </ol>
+      </li>
+      <li>
+        <p>Brackets, quotation marks.</p>
+         <ol><li>In vertical writing; 「 [U+300C], 」[U+300D], 『[U+300E], 』[U+300F]</li>
+          <li>In horizontal writing; ' [U+2018], ' [U+2019], &quot; [U+201C], &quot; [U+201D]</li>
+        </ol>
+       <figure> <img src="images/4-17.png" alt="" />
+          <figcaption>Brackets and quotation marks in vertical and horizontal writing</figcaption>
+        </figure>
+      </li>
+    </ol>
+</section>
+  <section id="space-paren">
+    <h4>Principles for Space Adjustment around Parentheses</h4>
+    <p>The following settings are recommended for automatic space placement (up to 4.3.6).</p>
+    <p>Opening parentheses, closing parentheses, and middle dots are half-width by default, but a half-width space is inserted before/after if these punctuation marks are with full-width characters like Hangul, Hanja, or Kana.</p>
+    <ol>
+    <li>
+      <p>Hangul opening parentheses (cl1) must have a half-width space inserted before.</p>
+    </li>
+    <li>
+      <p>Hangul closing parentheses (cl2) must have a half-width space inserted after.</p>
+    </li>
+    <li>
+      <p>Middle dots (cl7) must have quarter-width spaces inserted before and after.</p>
+      <figure> <img src="images/4-18.png" alt="" />
+        <figcaption>Space insertion principles for automatic space adjustment.</figcaption>
+      </figure>
+    </li>
+    </ol>
+  </section>
+  <section id="before-after-space">
+    <h4>Principles for Before/After Space Adjustment when Hangul Opening Parentheses (cl1), Hangul Closing Parentheses (cl2), or Middle Dots (cl3) are Consecutive</h4>
+    <ol>
+      <li>When a closing parenthesis is followed by an opening parenthesis, a half-width space is added between them. </li>
+      <li>
+        <p> When an opening parenthesis is followed by an opening parenthesis, no space is added between them, and a half-width space is added in front of the first opening parenthesis.</p>
+      </li>
+      <li>
+        <p> When a closing parenthesis is followed by a closing parenthesis, no space is added between them, and a half-width space is added after the last closing parenthesis.</p>
+      </li>
+      <li>
+        <p> When a closing parenthesis is followed by a middle dot, a quarter-width space is added between them.</p>
+      </li>
+      <li>
+        <p>When a middle dot is followed by an opening parenthesis, a quarter-width space is added after the middle dot.</p>
+        <figure> <img src="images/4-19.png" alt="" />
+          <figcaption>Space inserting principles for automatic space adjustment.</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section id="line-head-rest">
+    <h4>Line Head Restrictions</h4>
+    <p>Lines cannot start with  closing parenthesis (cl2), hyphen (cl5), dividing punctuation marks (cl6), middle dots (cl7), periods and commas (cl8~9), iteration marks (cl11), or prolonged sound marks (cl12).</p>
+  </section>
+  <section id="line-end-rest">
+    <h4>Line End Restrictions</h4>
+    <p>Opening parenthesis (cl1) cannot be placed at the end of a line.</p>
+  </section>
+  <section id="word-break-rest">
+    <h4>Word Break Restrictions</h4>
+    <p>In cases of characters or symbols  in a sequence like following, there is no line break between them.</p>
+    <ol>
+      <li>Between a sequence of em dashes (——) or horizontal bars (――).
+      </li>
+      <li>
+        <p>Between a sequence of triple dot ellipses (……) or double dot ellipses (‥‥). </p>
+      </li>
+      <li>
+        <p> 	Between a sequence of Arabic numerals.</p>
+      </li>
+      <li>
+        <p>Between prefix symbols (cl13) and Arabic or Hanja numerals.</p>
+      </li>
+      <li>
+        <p>Between Arabic or Hanja numbers and suffix symbols (cl14).</p>
+      </li>
+      <li>
+        <p>Between a base character and a superscript or subscript.</p>
+      </li>
+      <li>
+        <p>Between strings of footnote numbers.</p>
+      </li>
+    </ol>
+  </section>
+  <section id="inter-char-rest">
+    <h4>Restrictions on Inter-Character Width Adjustment  when Adjusting Lines</h4>
+    <p>In cases like the following inter-character width cannot be expanded during line adjustment. This is done in order to group characters and symbols as one word.</p>
+    <ol>
+      <li>
+        <p>All the cases mentioned in 4.3.6.</p>
+      </li>
+      <li>
+        <p>Before and after  Hangul opening parenthesis (cl2) and Hangul closing parenthesis (cl3). </p>
+      </li>
+      <li>
+        <p> Before and after  periods, commas (cl8~9) and middle dots (cl7).</p>
+      </li>
+      <li>
+        <p> Before and after  dividing punctuation marks (cl6).</p>
+      </li>
+      <li>
+        <p>Before and after  hyphens (cl5).</p>
+      </li>
+      <li>Before and after  spaces in CJK characters, such as full-width characters. </li>
+    </ol>
+  </section>
+</section>
+<section id="line">
+  <h3>Lines</h3>
+  <p>Lines are expressed by information such as line spacing or paragraph spacing.</p>
+  <section id="line-space">
+    <h4>Line Spacing</h4>
+    <p>There are four approaches to line spacing: character size, fixed value, space, and minimum line spacing.</p>
+    <ol>
+      <li>'Proportional line spacing' is applied by using a certain percentage of the character size.
+        <figure> <img src="images/4-20.png" alt="" />
+          <figcaption>Certain percentage of the character size: 160%.</figcaption>
+      </figure>
+      </li>
+      <li>
+        <p>'Line height' is applied using a fixed value, using units like point (pt), millimeter (mm), centimeter (cm), pica (pi), pixel (px), character (ch), 'Geop' (gp), inch (&quot;), etc.</p>
+        <figure> <img src="images/4-21.png" alt="" />
+          <figcaption>Fixed value: 20pt.</figcaption>
+      </figure>
+      </li>
+      <li>
+        <p>'Fixed value interline space' is applied by only specifying a value for the space, using units like point (pt), millimeter (mm), centimeter (cm), pica (pi), pixel (px), character (ch), 'Geop' (gp), inch(&quot;), etc.</p>
+        <figure> <img src="images/4-22.png" alt="" />
+          <figcaption>Specifying the space: 20pt.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>'Minimum line height' is applied by specifying the minimum value for line spacing, using units like point (pt), millimeter (mm), centimeter (cm), pica (pi), pixel (px), character (ch), 'Geup' (gp), inch (˝), etc.</p>
+        <figure> <img src="images/4-23.png" alt="" />
+          <figcaption>Minimum value: 20pt.</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section id="line-break">
+    <h4>Line Breaking Rules</h4>
+    <p>Line breaking is done by setting the rules for dividing the end of each line, and by adjusting the space between words in the line before.</p>
+    <ol>
+      <li>
+        <p>Line Breaking Rules in Hangul.</p>
+        <p>If a line ends in Hangul, line breaking is done on character or word basis.  The user can decide which approach to use on a paragraph-by-paragraph basis, or for the whole document.</p>
+        <figure> <img src="images/char-vs-word.png" alt="" />
+          <figcaption>Character-based (on the left) vs. word-based (on the right) line breaks.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>Line Breaking Rules in English.</p>
+        <p>If a line ends in English, line breaking is done on character basis or word basis, or by using a hyphen.</p>
+      </li>
+      <li>
+        <p>Minimum Space for Breaking Line.</p>
+          <p>By specifying a minimum value for inter-word spaces, inter-word spaces in a line can be reduced in order to keep the word at the end of the line from breaking onto the next line.</p>
+      </li>
+  </ol>
+  </section>
+</section>
+<section id="line-adjust">
+  <h3>Line Adjustment Process</h3>
+  <p>Even space alignment is the default setting in Hangul writing. Lines are aligned using even spaces if fixed-width Hangul characters are arranged without spaces, but in cases like those below, line adjustment (adjusting inter-character spaces) is applied to align any dislocated line ends.</p>
+  <section id="line-adjust-cases">
+    <h4>Cases for Application of Line Adjustment</h4>
+    <ol>
+      <li>
+        <p>When proportional width glyphs like Latin alphabet text, Latin alphabet punctuation marks, numerals, etc. are included (Hangul-Latin mixed writing).</p>
+      </li>
+      <li>
+        <p>When the character sizes in a line are different to each other.</p>
+      </li>
+      <li>
+        <p>When restrictions, such as line breaking restrictions, are applied</p>
+      </li>
+    </ol>
+  </section>
+</section>
+<section id="tabs">
+  <h3>Tabs</h3>
+  <section id="using-tabs">
+    <h4>Using Tabs</h4>
+    <p>The position of a tab and the alignment method (tab type) are specified, then the tab code is entered before the character or the word in the specified position.</p>
+  </section>
+  <section id="tab-align">
+    <h4>Aligning at Specified Tab Position</h4>
+    <p>Adjustment mode (tab type) is specified at the tab position.</p>
+    <ol>
+      <li>
+        <p>(Upper) left corner adjustment tab: in horizontal writing, the left end of characters/words is aligned to the tab position, and in vertical writing, the top end is aligned.</p>
+        <figure> <img src="images/4-24.png" alt="" />
+          <figcaption>Left tab.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>(Bottom) right corner adjustment tab: in horizontal writing, the right end of characters/words is aligned to the tab position, and in vertical writing, the bottom end is aligned.</p>
+        <figure> <img src="images/4-25.png" alt="" />
+          <figcaption>Right tab.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>Center adjustment tab: the center of characters/words is aligned to the tab position.</p>
+        <figure> <img src="images/4-26.png" alt="" />
+          <figcaption>Center tab.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>Specific character adjustment tab: the front end of a specific character in characters/words is aligned to the tab position.</p>
+        <figure> <img src="images/4-27.png" alt="" />
+          <figcaption>Specific character tab.</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+</section>
+</section>
+
+
+
+
+<section id="besidespara">
+  <h2>Components Besides Paragraphs</h2>
+  <section id="notes">
+    <h3>Notes (Footnote, Endnote)</h3>
+    <p> A note is used for presenting supplementary information about the main content, or presenting the source of cited information.</p>
+    <section id="notes-multicol">
+      <h4>Footnote Application in Multi-Column</h4>
+      <p>When footnotes are used in multi-column, there are three processing modes.</p>
+      <ol>
+        <li>
+          <p>Showing footnotes at the bottom of the column with the corresponding text.</p>
+          <figure> <img src="images/5-1.png" alt="" />
+            <figcaption>Bottom of the corresponding column</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Showing footnotes in a single-column, aligned to the page width.</p>
+          <figure> <img src="images/5-2.png" alt="" />
+            <figcaption>Page width single-column.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Showing all the footnotes in a column on the right side.</p>
+          <figure> <img src="images/5-3.png" alt="" />
+            <figcaption>Right side column</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </section>
+    <section id="vert-footnote">
+      <h4>Vertical Position of Footnote</h4>
+      <p>The position of footnotes can be specified when the page is not full.</p>
+      <ol>
+        <li>
+          <p>Placing the footnote right above the specified footer area. If the footnote is increased, it goes toward the main text and the main text area is decreased.
+          </p>
+          <figure> <img src="images/5-4.png" alt="" />
+            <figcaption>Decreased main text area when the footnote content is changed. (Single column and multi-column cases.)</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Placing the footnote right below the main text If the main text content is increased, the footnote content goes downward</p>
+          <figure> <img src="images/5-5.png" alt="" />
+            <figcaption>Moved footnote content when main text content is changed. (Single column and multi-column cases.)</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </section>
+    <section id="number-in-note">
+      <h4>Numbers in Notes</h4>
+      <p>Numbers used in footnotes and endnotes use many types of symbols and characters, such as Arabic numerals, Latin alphabet characters, Hangul characters, Hanja characters, etc.</p>
+      <figure> <img src="images/5-6.png" alt="" />
+        <figcaption>Examples of footnote/endnote number.</figcaption>
+      </figure>
+    </section>
+    <section id="note-separation">
+      <h4>Dividing Notes and Main Text</h4>
+      <p>In order to divide the note and the main text, a dividing line or a space is inserted. Spaces are added  above and  below  the dividing line, and spaces between each note are specified.</p>
+      <figure> <img src="images/5-7.png" alt="" />
+        <figcaption>Example of dividing the main text and the note with a dividing line.</figcaption>
+      </figure>
+    </section>
+    <section id="note-position">
+      <h4>Note Position</h4>
+      <p> A note has many different positions due to the characteristics of footnotes and endnotes.</p>
+      <ol>
+      <li><p>Footnote Position</p>
+        <p>A footnote can be presented below the annotated main text, right above the footer of the page including the annotated main text (refer to the figure in 5.1.2.).</p>
+      </li>
+      <li>
+        <p>Endnote Position</p>
+        <p>Endnotes can be presented all together at the end of the document. If the document is separated into many chapters and each chapter needs different endnotes presented, endnotes can be gathered at a specified location.</p>
+      </li>
+      <li>
+        <p>Note Restrictions</p>
+        <p>Notes can be used in any part of the text body including paragraphs with tables or boxes, but cannot be used in footers or headers.</p>
+      </li>
+      </ol>
+    </section>
+  </section>
+  <section id="page-number">
+    <h3>Page Numbers</h3>
+    <p> Page numbers can be presented in many forms, and can also be located on any side of the corresponding page.</p>
+    <section id="number-position">
+      <h4>Page Number Position</h4>
+      <p>Page numbers can be at 10 different positions as follows. The appearance of numbers can also be different in many ways, sometimes used with a dash ('-') on each side.</p>
+      <figure> <img src="images/5-8.png" alt="" />
+        <figcaption>Positions for page numbers</figcaption>
+      </figure>
+    </section>
+  </section>
+  <section id="table-fig">
+    <h3>Position and Size of Elements beside Paragraphs (tables, figures, etc.)</h3>
+    <p>Elements beside paragraphs (objects) are processed the same as characters, or as objects.</p>
+    <section id="tabfig-as-char">
+      <h4>Processing as a Character</h4>
+      <p>The object is positioned in a certain location between characters, and the size affects the line spacing.</p>
+      <figure> <img src="images/5-9.png" alt="" />
+        <figcaption>Processing as a character.</figcaption>
+      </figure>
+      <figure> <img src="images/5-10.png" alt="" />
+        <figcaption>Processing as an object.</figcaption>
+      </figure>
+    </section>
+    <section id="tabfig-as-object">
+      <h4>Processing as an Object</h4>
+      <p>Objects have 4 processing modes, as below.</p>
+      <ol>
+        <li>
+          <p>Text Wrap mode</p>
+          <figure> <img src="images/5-11.png" alt="" />
+            <figcaption>Text wrap mode.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Top and Bottom mode</p>
+          <figure> <img src="images/5-12.png" alt="" />
+            <figcaption>Top and bottom mode.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Behind text mode</p>
+          <p>The object is placed like a background.</p>
+          <figure> <img src="images/5-13.png" alt="" />
+            <figcaption>Behind text mode.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <p>Front of text mode</p>
+          <p>The object is placed on top of the text, covering it.</p>
+          <figure> <img src="images/5-14.png" alt="" />
+            <figcaption>Front of text mode.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </section>
+    <section id="tabfig-position">
+      <h4>Basis for Vertical/Horizontal Position</h4>
+      <p> The object's placement in text and vertical/horizontal position is changed, depending on where the base is.</p>
+      <ol>
+        <li>
+          <p>Paragraph base position</p>
+          <p>The vertical and horizontal position is calculated from the paragraph base.</p>
+        </li>
+        <li>
+          <p>Column base position</p>
+          <p>The horizontal position is calculated from the column base.</p>
+        </li>
+        <li>
+          <p>Page base position</p>
+          <p>The vertical and horizontal position is calculated from the page base.</p>
+        </li>
+        <li>
+          <p>Sheet base position</p>
+          <p>The vertical and horizontal position is calculated from the sheet base.</p>
+        </li>
+      </ol>
+      <figure> <img src="images/5-15.png" alt="" />
+        <figcaption>Base for positioning elements beside paragraph.</figcaption>
+      </figure>
+    </section>
+    <section id="tabfig-overlap">
+      <h4>Overlap Setting</h4>
+      <p> When objects are set to 'text wrap' or 'top and bottom' modes, objects do not overlap as a default. However such objects can be overlap by using an 'overlap' setting.</p>
+      <figure> <img src="images/5-16.png" alt="" />
+        <figcaption>Objects overlapping.</figcaption>
+      </figure>
+    </section>
+    <section id="tabfig-outer">
+      <h4>Outer Margin</h4>
+      <p>The outer margin of elements beside a paragraph means the space between the object and the paragraph elements around it. If an outer margin is set for an object, the caption for the object starts from the original object area, not the outer margin area.</p>
+      <ol>
+        <li>
+          <p>Left: A space between the text and the left side of the object.</p>
+        </li>
+        <li>
+          <p>Right: A space between the text and the right side of the object.</p>
+        </li>
+        <li>
+          <p> Top: A space between the text and the upper side of the object.</p>
+        </li>
+        <li>
+          <p>Bottom: A space between the text and the lower side of the object.</p>
+        </li>
+      </ol>
+      <figure> <img src="images/5-17.png" alt="" />
+        <figcaption>Example of setting the outer margin to 5mm.</figcaption>
+      </figure>
+    </section>
+    <section id="caption">
+      <h4>Captions</h4>
+      <p> Numbers, titles, or simple descriptions can be added to the elements beside paragraphs, if needed. Such titles added to objects are called captions.</p>
+      <section id="caption-position">
+      <h5>Caption Position</h5>
+      <p>Captions are positioned outside of an object's outline, as below.</p>
+      <figure> <img src="images/5-18.png" alt="" />
+        <figcaption>Caption positioning modes.</figcaption>
+      </figure>
+      </section>
+      <section id="caption-size">
+        <h5>Caption Size and Spacing</h5>
+        <p> The space between caption and object can be adjusted. If the caption is on the right/left side of the object, the size for the title area is specified.</p>
+        <figure> <img src="images/5-19.png" alt="" />
+          <figcaption>Examples of specifying caption spacing.</figcaption>
+        </figure>
+      </section>
+      <section id="caption-mode">
+        <h5>Caption Presentation Mode</h5>
+        <p>Captions are entered in a line, or expanded to the margin of the corresponding object.</p>
+        <figure> <img src="images/5-20.png" alt="" />
+          <figcaption>Caption presentation mode.</figcaption>
+        </figure>
+      </section>
+    </section>
+    <section id="borders">
+      <h4>Borders</h4>
+      <p>Objects can have borders with various types of line.</p>
+      <figure> <img src="images/5-21.png" alt="" />
+        <figcaption>Example of assigning line type.</figcaption>
+      </figure>
+    </section>
+  </section>
+  <section id="tables">
+    <h3>Table</h3>
+    <p>Tables are composed of cells, and each cell can be configured into various forms as shown below.</p>
+    <figure> <img src="images/5-22.png" alt="" />
+      <figcaption>Examples of table composition.</figcaption>
+    </figure>
+    <section id="table-cell">
+      <h4>Cell</h4>
+      <p> Cells can be selected individually and have various settings.</p>
+      <ol>
+        <li>
+          <p>Font and paragraph format of the cell</p>
+        </li>
+        <li>
+          <p>Border and background style</p>
+        </li>
+        <li>
+          <p>Merging and dividing cells</p>
+        </li>
+        <li>
+          <p>Size and margin adjusting</p>
+        </li>
+        <li>
+          <p>Space between cells</p>
+        </li>
+      </ol>
+      <figure> <img src="images/5-23.png" alt="" />
+        <figcaption>Example of spacing between cells.</figcaption>
+    </figure>
+    </section>
+    <section id="inner-padding">
+      <h4>Inner Padding of a Table/Cell</h4>
+      <p> If inner padding space is applied to both table and cell, the value is applied to the cell prior to that of the table. The size of table does not change even if the value of inner padding is high.</p>
+      <figure> <img src="images/5-24.png" alt="" />
+        <figcaption>Diagonal lines in a cell of a table.</figcaption>
+      </figure>
+      <figure> <img src="images/5-25.png" alt="" />
+        <figcaption>Diagonal lines in through multiple cells.</figcaption>
+      </figure>
+    </section>
+    <section id="table-background">
+      <h4>Background of Table</h4>
+      <p> The background of table and cell can be color, gradation, or background images.</p>
+      <figure> <img src="images/5-26.png" alt="" />
+        <figcaption>Example of background in tables.</figcaption>
+    </figure>
+    </section>
+  </section>
+</section>
+
+
+
+<section id="page-layout">
+  <h2>Page Layout</h2>
+  <section id="text-layout">
+    <h3>Designing the Hangul Text Layout System</h3>
+    <p>The Hangul text layout system is approached from two perspectives: overall page layout design and page body design.</p>
+  </section>
+  <section id="page-format">
+    <h3>Elements of Designing Page Format</h3>
+    <ol>
+      <li>
+        <p>Page size (size of selected page or screen), page direction.</p>
+      </li>
+      <li>
+        <p>Text direction (horizontal/vertical writing).</p>
+      </li>
+      <li>
+        <p>Page body (the area excluding top/bottom/left/right margin from the page size).</p>
+      </li>
+      <li>
+        <p>Running head and page numbers.</p>
+      </li>
+    </ol>
+    <figure> <img src="images/6-1.png" alt="" />
+      <figcaption>Running head and page numbers (left to right).</figcaption>
+    </figure>
+    <figure> <img src="images/6-2.png" alt="" />
+      <figcaption>Running head and page numbers (right to left).</figcaption>
+    </figure>
+  </section>
+  <section id="page-body">
+    <h3>Designing the Page Body</h3>
+    <section id="page-body-basic">
+      <h4>Basic Elements of Designing Page Body</h4>
+      <p>In the case of pages in books, the elements are as below:</p>
+      <ol>
+        <li>
+          <p>Size and name of fonts.</p>
+        </li>
+        <li>
+          <p>Writing direction (vertical/horizontal).</p>
+        </li>
+        <li>
+          <p>Number and spacing of columns.</p>
+        </li>
+        <li>
+          <p>Width of line (text box width=page body width).</p>
+        </li>
+        <li>
+          <p>Number of lines per page (per columns in multi-column format).</p>
+        </li>
+        <li>
+          <p>Line height value.</p>
+        </li>
+      </ol>
+      <figure> <img src="images/6-3.png" alt="" />
+        <figcaption>Example of page body.</figcaption>
+      </figure>
+    </section>
+    <section id="page-body-position">
+      <h4>Positioning the Page Body</h4>
+      <p>Note  that the position of the page body is linked to the margin values. The following are examples of positioning and setting size of page body.</p>
+      <ol>
+        <li>
+          <p>Vertical position, center of page; Horizontal position, center of page.</p>
+        </li>
+        <li>
+          <p>Vertical position, upper or lower margin specified; Horizontal position, center of page.</p>
+        </li>
+        <li>
+          <p>Vertical position, center of page; Horizontal  position, inner margin specified.</p></li>
+        <li>
+          <p>Vertical position, upper or lower margin specified; Horizontal position, inner margin specified.</p>
+        </li>
+      </ol>
+      <figure> <img src="images/6-4.png" alt="" />
+        <figcaption>Position based on margins.</figcaption>
+      </figure>
+    </section>
+  </section>
+  <section id="running-head">
+    <h3>Running Heads and Page Numbers</h3>
+    <p>Running heads and page numbers are placed outside of the page body, and typical positions are as shown below.</p>
+    <figure> <img src="images/6-5.png" alt="" />
+      <figcaption>Running head positions.</figcaption>
+    </figure>
+    <figure> <img src="images/6-6.png" alt="" />
+      <figcaption>Page number positions.</figcaption>
+    </figure>
+  </section>
+</section>
+
+
+
+<section class="appendix" id="app-A">
+<h2> Hangul Code Ranges in Unicode</h2>
+
+<p>The following punctuation marks are used in Hangul environment.</p>
+
+<ul>
+<li><p>Basic Latin (U+0020~U+007F): Latin alphabet and numerals</p>
+  <figure> <img src="images/a-1.png" alt="" /></figure>
+</li>
+<li>
+  <p>General Punctuation (U+2010~)</p>
+  <figure> <img src="images/a-2.png" alt="" /></figure>
+</li>
+<li>
+  <p>Superscripts and Subscripts (U+2070~)</p>
+  <figure> <img src="images/a-3.png" alt="" /></figure>
+</li>
+<li>
+  <p>Currency Symbols (U+20A0~)</p>
+  <figure> <img src="images/a-4.png" alt="" /></figure>
+</li>
+<li>
+  <p>Letterlike Symbols (U+2100~)</p>
+  <figure> <img src="images/a-5.png" alt="" /></figure>
+</li>
+<li>
+  <p>Number Forms (U+2050~)</p>
+  <figure> <img src="images/a-6.png" alt="" /></figure>
+</li>
+<li>
+  <p>Arrows (U+2190~)</p>
+  <figure> <img src="images/a-7.png" alt="" /></figure>
+</li>
+<li>
+  <p>Mathematical Operators (U+2200~)</p>
+  <figure> <img src="images/a-8.png" alt="" /></figure>
+</li>
+<li>
+  <p>Enclosed Alphanumerics (U+2460~)</p>
+  <figure> <img src="images/a-9.png" alt="" /></figure>
+</li>
+<li>
+  <p>Box Drawing (U+2500~)</p>
+  <figure> <img src="images/a-10.png" alt="" /></figure>
+</li>
+<li>
+  <p>Block Elements (U+2580~)</p>
+  <figure> <img src="images/a-11.png" alt="" /></figure>
+</li>
+<li>
+  <p>Geometric Shapes (U+25A0~)</p>
+  <figure> <img src="images/a-12.png" alt="" /></figure>
+</li>
+<li>
+  <p>Miscellaneous Symbols (U+2600~)</p>
+  <figure> <img src="images/a-14.png" alt="" /></figure>
+</li>
+<li>
+  <p>Dingbats (U+2700~)</p>
+  <figure> <img src="images/a-15.png" alt="" /></figure>
+</li>
+<li>
+  <p>CJK Symbols and Punctuation (U+3000~)</p>
+  <figure> <img src="images/a-16.png" alt="" /></figure>
+</li>
+<li>
+  <p>Hangul Compatibility Jamo (U+3130~)</p>
+  <figure> <img src="images/a-17.png" alt="" /></figure>
+</li>
+<li>
+  <p>Enclosed CJK Letters and Months (U+3200~)</p>
+  <figure> <img src="images/a-18.png" alt="" /></figure>
+</li>
+<li>
+  <p>Hangul Jamo Extended-A (U+A960~)</p>
+  <figure> <img src="images/a-19.png" alt="" /></figure>
+</li>
+<li>
+  <p>Hangul Syllables (U+AC00~U+D7A3)</p>
+  <figure> <img src="images/a-20.png" alt="" /></figure>
+</li>
+<li>
+  <p>Hangul Jamo Extended-B (U+D7B0~)</p>
+  <figure> <img src="images/a-21.png" alt="" /></figure>
+</li>
+<li>
+  <p>CJK Compatibility Ideographs (U+F900~)</p>
+  <figure> <img src="images/a-22.png" alt="" /></figure>
+</li>
+<li>
+  <p>CJK Compatibility Forms (U+FE30~FE48)</p>
+  <figure> <img src="images/a-23.png" alt="" /></figure>
+</li>
+</ul>
+</section>
+
+
+<section class="appendix" id="app-b">
+  <h2>References</h2>
+  <ul>
+    <li>
+      <p>ISO/IEC 10646-1:1993. Information technology -- Universal Multiple-Octet Coded Character Set (UCS) -- Part 1: Architecture and Basic Multilingual Plane</p>
+    </li>
+    <li>
+      <p>W3C Working Group Note. 2009. &quot;Requirements for Japanese Text Layout&quot; 1st ed., http://www.w3.org/TR/2009/NOTE-jlreq-20090604/</p>
+    </li>
+    <li>
+      <p>Korea Font Development Center. 2000. Korean Font Dictionary, King Sejong Memorial Foundation.</p>
+    </li>
+    <li>
+      <p>Sang-Soo Ahn, Jae-Joon Han, and Yong-Je Lee. 2009. Hangeul Design Textbook. Ahn Graphics.</p>
+    </li>
+    <li>
+      <p>S. J. Song. 2008. Book design textbook. Ahn Graphics. (translated from Andrew Haslam. 2006. Book design. Laurence King Publishing.)</p>
+    </li>
+    <li>
+      <p>Adobe Systems. 2010. User Guide. Using Adobe® InDesign® CS5 for Windows® and Mac OS. Adobe Systems.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="appendix" id="app-c">
+  <h2> Revision Log</h2>
+  <p>This is the first publication of this document as a Working Group Draft.</p>
+</section>
+
+
+<section class='appendix'>
+<h2>Acknowledgements</h2>
+<p>This document has been developed with contributions from participants of Korean standardization committee members and Korean Society of Typography. The project to develop this document was supported by Korea's Standard Infrastructure Enhancement Program from KATS (Korean Agency for Technology and Standards).</p>
+</section>
+  </body>
+</html>
