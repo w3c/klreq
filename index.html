@@ -193,7 +193,7 @@
     <li>Enclosed CJK Letters and Months (U+3200~)</li>
     <li>CJK Compatibility Ideographs (U+F900~) </li>
     <li>CJK Compatibility Symbols and Punctuation for Vertical Writing (U+FE30~FE48)</li>
-  </ul>
+  </ul><p class="issue">See <a href="http://www.w3.org/International/track/issues/255">http://www.w3.org/International/track/issues/255</a></p>
 </section>
 <section id="fonts-horizvertpunct">
   <h4>Hangul Punctuation Marks in Horizontal and Vertical Writing</h4>
@@ -358,6 +358,8 @@
   <dd> (U+0020~U+007F)</dd>
   <dt>cl28. Fixed Width Full-width Numerals</dt>
   <dd>(U+FF21~U+FF5A)</dd>
+  <dt>cl29. CJK Ideographs</dt>
+  <dd>(U+4E00~U+9FFF)</dd>
   </dl>
   </div>
 </section>
@@ -376,66 +378,69 @@
     <ol>
       <li>Hangul Compatibility Jamo (U+3130~) </li>
       <li>Enclosed CJK Characters and Numerals (U+3200~)</li>
+      <li>CJK Ideographs (U+4E00~)</li>
       <li>Hangul Jamo Extended-A (U+A960~)</li>
       <li>Hangul Precomposed Syllables (U+AC00~U+D7A3) </li>
       <li>Hangul Jamo Extended-B (U+D7B0~)</li>
-      <li>CJK Compatibility Ideographs (U+F900~)</li>
+      <li>CJK Compatibility Ideographs (U+F900~)  </li>
     </ol>
-</section>
+  </section>
   <section id="chartypes-intercharspace">
     <h4>Inter-Character Spacing for Hangul, Hanja, Kana, etc</h4>
-    <p>Characters like Hangul, Hanja, or Kana have zero space between characters by default. Additionally, there are inter-character space settings such as settings such as narrower or wider, to support double-sided justification.</p></section></section>
+    <p>Characters like Hangul, Hanja, or Kana have zero space between characters by default. Additionally, there are inter-character space settings such as settings such as narrower or wider, to support double-sided justification.</p>
+  </section>
+</section>
     
     <section id="hangulromanmix">
-  <h3>Hangul and Latin Mixed Writing (Including Partial Horizontal Writing in Vertical Writing)</h3>
-  <p>Mixed writing is a Hangul sentence with Latin alphabetic characters, numbers, or symbols inside.</p>
-  <section id="mixed-horiz">
-    <h4>Characters for Horizontal Hangul and Latin Mixed Writing</h4>
-    <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used.    </p>
-    <figure> <img src="images/3-1.png" alt="" />
-      <figcaption>Example of horizontal mixed writing</figcaption>
-    </figure>
-  </section>
-  <section id="mixed-vertical">
-    <h4>Characters for Vertical Hangul and Latin Mixed Writing</h4>
-    <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used. </p>
-    <ol>
-    <li>
-    	<p>Each Latin character is placed vertically.</p>
-        <figure> <img src="images/3-2.png" alt="" />
-          <figcaption>Example of vertical Latin in mixed writing.</figcaption>
+      <h3>Hangul and Latin Mixed Writing (Including Partial Horizontal Writing in Vertical Writing)</h3>
+      <p>Mixed writing is a Hangul sentence with Latin alphabetic characters, numbers, or symbols inside.</p>
+      <section id="mixed-horiz">
+        <h4>Characters for Horizontal Hangul and Latin Mixed Writing</h4>
+        <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used.    </p>
+        <figure> <img src="images/3-1.png" alt="" />
+          <figcaption>Example of horizontal mixed writing</figcaption>
         </figure>
-        </li>
-    <li>
-      <p>Latin characters are placed 90 degrees rotated.</p>
-      <figure> <img src="images/3-3.png" alt="" />
-        <figcaption>Example of vertical Latin rotated in mixed writing.</figcaption>
+      </section>
+      <section id="mixed-vertical">
+        <h4>Characters for Vertical Hangul and Latin Mixed Writing</h4>
+        <p>Hangul syllables, proportional width basic Latin, and fixed width or proportional width Arabic numerals are used. </p>
+        <ol>
+          <li>
+            <p>Each Latin character is placed vertically.</p>
+            <figure> <img src="images/3-2.png" alt="" />
+              <figcaption>Example of vertical Latin in mixed writing.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <p>Latin characters are placed 90 degrees rotated.</p>
+            <figure> <img src="images/3-3.png" alt="" />
+              <figcaption>Example of vertical Latin rotated in mixed writing.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <p>Partial horizontal writing in vertical writing; two-digit numbers are rotated 90 degrees as a group, then aligned by the center of the line. Used mainly for two-digit numbers.</p>
+            <figure> <img src="images/3-4.png" alt="" />
+              <figcaption>Example of partial horizontal writing in vertical writing.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </section>
+    </section>
+    <section id="supsubscript">
+      <h3>Superscripts and Subscripts</h3>
+      <p>Superscripts and subscripts are placed next to a base character. Superscripts and subscripts are used for SI units, numeric·chemical formulae, footnote numbers, etc. The space between the base character and the superscript or subscript is zero by default.</p>
+      <p>Usually the size of the superscript or subscript is 60~70% of the size of the base character.</p>
+      <figure> <img src="images/3-5.png" alt="" />
+        <figcaption>Examples of superscript·subscript</figcaption>
       </figure>
-    </li>
-    <li>
-      <p>Partial horizontal writing in vertical writing; two-digit numbers are rotated 90 degrees as a group, then aligned by the center of the line. Used mainly for two-digit numbers.</p>
-      <figure> <img src="images/3-4.png" alt="" />
-        <figcaption>Example of partial horizontal writing in vertical writing.</figcaption>
-      </figure>
-    </li>
-     </ol>
-  </section>
-</section>
-<section id="supsubscript">
-  <h3>Superscripts and Subscripts</h3>
-  <p>Superscripts and subscripts are placed next to a base character. Superscripts and subscripts are used for SI units, numeric·chemical formulae, footnote numbers, etc. The space between the base character and the superscript or subscript is zero by default.</p>
-  <p>Usually the size of the superscript or subscript is 60~70% of the size of the base character.</p>
-  <figure> <img src="images/3-5.png" alt="" />
-    <figcaption>Examples of superscript·subscript</figcaption>
-  </figure>
-</section>
-<section id="signmatharrange">
-  <h3>Arrangement of Signs, Math Symbols</h3>
-  <ol>
-  <li>The space between signs, math symbols and Hangul characters is a user defined space (1/8-width space recommended) by default.</li>
-  <li>The space between signs or math symbols and numerals or Latin alphabetic text is zero by default.</li>
-  </ol>
-</section>
+    </section>
+    <section id="signmatharrange">
+      <h3>Arrangement of Signs, Math Symbols</h3>
+      <ol>
+        <li>The space between signs, math symbols and Hangul characters is a user defined space (1/8-width space recommended) by default.</li>
+        <li>The space between signs or math symbols and numerals or Latin alphabetic text is zero by default.</li>
+      </ol>
+    </section>
 </section>
 
 
