@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+
+figcaption {
+	 text-align: center;
+	margin: 0.5em 2em;
+	font-style: italic;
+	font-size: 90%;
+	}
+figure { 
+	margin-bottom: 2em; 
+	text-align: center;
+	}
+.figno:after {
+	content: ':\00A0  ';
+}
+
+
+
+.editor-note { 
+	font-style: italic; 
+	color: teal;
+	}
+.ed { 
+	font-style: italic; 
+	color: white;
+	background-color: #F90;
+	padding-left: 10px; padding-right: 10px; 
+	}
+
+.new-term { 
+	font-weight: bold 
+	}
+code { 
+	font-family: monospace; 
+	}
+del { 
+	display: inline; 
+	color: silver; 
+	}
+h2 {
+	margin-top: 3em;
+	margin-bottom: 0em;
+	}
+.head h2, #abstract h2, #sotd h2 {
+	margin-top: 0;
+	}
+h3 {
+	margin-top: 3em;
+	}
+h4  { font-size: 100%; font-weight: normal; }
+
+ins { 
+	background-color: #99FF99; 
+	text-decoration: none; 
+	}
+.term { 
+	font-weight: bold;
+	margin-top: 1em;
+	}
+.definition {
+	margin-left: 3em;
+	}
+a.termref:link {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+	
+a.termref:hover {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+	
+a.termref:visited {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+	
+a.termref:active {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+
+/*
+      .note {
+      	margin-left: 2em;
+      	margin-right: 3em;
+		margin-top: 1em;
+      	border: 2px solid #CFF6D9;
+      	padding: .5em;
+      	padding-top: 0px;
+      	padding-bottom: 1em;
+      	color: #444;
+      	background-color: #E2FFF0;
+      	font-size: 0.8em;
+      }
+      span.note-head {
+      	padding: .2em;
+      	color:#066;
+      	border: none;
+      	position:relative;
+      	display: block;
+      	width: 40px;
+      	left: -1.5em;
+      	top: -.5em;
+      	background: #F2FFF1;
+      	padding-left: .2em;
+      	text-align: center;
+      }
+	 */
+	 
+p.code { margin-top: 0; margin-bottom: 0; font-family:"Courier New", Courier, monospace; width: 75%;  }
+
+
+/* Added for Hangul layout doc */
+
+
+h4 { 	color: #005a9c; margin-top: 2em;  }
+.indent { margin-left: 3em; }
