@@ -12,10 +12,10 @@ function switch2ko () {
 	// change boilerplate text
 	document.getElementById('h-abstract').textContent = '요약'
 	document.getElementById('h-sotd').textContent = '현재 문서의 상태'
-	document.getElementById('h-toc').textContent = 'Table of Contents'
+	document.getElementById('h-toc').textContent = '목차'
 	
 	var notes = document.querySelectorAll('.note-title')
-	for (i=0;i<notes.length;i++) notes[i].textContent = 'NOTE'
+	for (i=0;i<notes.length;i++) notes[i].textContent = '주석'
 	var figcaptions = document.querySelectorAll('figcaption')
 	for (i=0;i<figcaptions.length;i++) figcaptions[i].firstChild.textContent = '그림 '
 	
@@ -24,11 +24,13 @@ function switch2ko () {
 		switch (dts[i].textContent) {
 		case 'This version:': dts[i].textContent = '현재 버전:'; break;
 		case 'Latest published version:': dts[i].textContent = '최신 버전:'; break;
-		//case 'Latest editor\'s draft:': dts[i].textContent = '最新编辑草稿：'; break;
+		case 'Latest editor\'s draft:': dts[i].textContent = '최신 편집자 초안:'; break;
 		case 'Authors:': dts[i].textContent = '저자:'; break;
-		//case 'Editor:': dts[i].textContent = '编辑：'; break;
-		//case 'Bug tracker:': dts[i].textContent = '错误跟踪：'; 
-		//	dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/clreq/issues">反馈错误</a>（<a href="https://github.com/w3c/clreq/issues">修正中的错误</a>）'; break;
+		case 'Editor:': dts[i].textContent = '편집자:'; break;
+		case 'Bug tracker:': dts[i].textContent = '오류 추적:'; 
+			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/klreq/issues">오류 파일</a> (<a href="https://github.com/w3c/klreq/issues">오류 보기</a>)'; break;
+		case 'Github:': dts[i].textContent = '깃허브:'; 
+			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/klreq">저장소</a>'; break;
 		}
 		}
 	}
