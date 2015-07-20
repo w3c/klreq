@@ -97,9 +97,10 @@ the following edits should be made to the snapshot of the file that will be publ
 [1] remove  onload="addLangAttrs();" from the body tag
 
 [2] convert the contents of the h1 tag to the following:
-
+```
 <span data-lang="en">Requirements for Hangul Text Layout and Typography</span><br/>
   <span data-lang="ko" lang="ko">한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항</span>
+```
 
 [3] in the SOTD, change the link on "latest dated version in /TR" to point to the location of the document that is about to be published
 
