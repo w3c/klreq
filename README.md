@@ -23,8 +23,7 @@ Editors should be familiar with and use the following:
 - [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
 - [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
 
-###Additional information for editors 
-- [Task Force Home Page](https://www.w3.org/2007/02/japanese-layout/)
+##Additional information for editors 
 
 Combining the English and Korean text in one document makes it much easier to develop and maintain content in both languages in parallel. Note that the English version will be the authoritative version, since it is more widely accessible to developers around the world.
 
@@ -103,7 +102,7 @@ For additional ideas about markup and styling in Internationalization Activity d
 http://www.w3.org/International/docs/styleguide
 
 
-##Pre-publication edits##
+###Pre-publication edits##
 
 the following edits should be made to the snapshot of the file that will be published.
 
