@@ -1,17 +1,30 @@
-# klreq
-Requirements for Hangul Text Layout and Typography
+# Requirements for Hangul Text Layout and Typography (klreq)
 
-TR version: http://www.w3.org/TR/klreq/
-Editor's version http://w3c.github.io/klreq/
+###Documents
+- [Editor's copy](https://w3c.github.io/klreq/)
+- [WG Note](https://www.w3.org/TR/klreq/)
 
-Please review the latest _dated_ TR version, and in your comments use URLs to point to that dated version. (This helps us see what you commented on even if the document changes over time.)
+The document contains both English and Korean versions of the text. Use the buttons at the top of the window to select a single-language view.
 
-For current issues, see the github issues list, pointed to by this page. See the issue tracker at http://www.w3.org/International/track/products/42 for old issues.
+###Feedback
+Feedback about the content of this document can be submitted via issues or pull requests in this GitHub repo.
+
+If needed, you can also send comments to [public-i18n-cjk@w3.org](mailto:public-i18n-cjk@w3.org). You can view the archives of this mailing list [here](https://lists.w3.org/Archives/Public/public-i18n-cjk/).
+
+For archived issues, predating github, see the disused [issue tracker](http://www.w3.org/International/track/products/42).
 
 
+###Contributing
 
+All contributors should read and agree with [CONTRIBUTING.md](https://github.com/w3c/jlreq/blob/gh-pages/CONTRIBUTING.md).
 
-##Editorial guidelines:##
+Editors should be familiar with and use the following:
+
+- [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
+- [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
+
+###Additional information for editors 
+- [Task Force Home Page](https://www.w3.org/2007/02/japanese-layout/)
 
 Combining the English and Korean text in one document makes it much easier to develop and maintain content in both languages in parallel. Note that the English version will be the authoritative version, since it is more widely accessible to developers around the world.
 
