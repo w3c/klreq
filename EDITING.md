@@ -1,4 +1,4 @@
-###Creating or modifying content###
+#Creating or modifying content###
 
 When creating new content, you should always create markup for both Korean and English versions.
 
