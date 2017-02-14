@@ -1,4 +1,10 @@
-#Creating or modifying content###
+#Additional information for editors 
+
+Combining the English and Korean text in one document makes it much easier to develop and maintain content in both languages in parallel. However, it requires a certain sequence of steps when creating or modifying the text.
+
+(Note that the English version will be the authoritative version, since it is more widely accessible to developers around the world.)
+
+###Creating or modifying content###
 
 When creating new content, you should always create markup for both Korean and English versions.
 
