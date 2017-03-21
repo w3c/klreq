@@ -1,10 +1,10 @@
-#Additional information for editors 
+# Additional information for editors 
 
 Combining the English and Korean text in one document makes it much easier to develop and maintain content in both languages in parallel. However, it requires a certain sequence of steps when creating or modifying the text.
 
 (Note that the English version will be the authoritative version, since it is more widely accessible to developers around the world.)
 
-###Creating or modifying content###
+### Creating or modifying content
 
 When creating new content, you should always create markup for both Korean and English versions.
 
@@ -28,7 +28,7 @@ If you change existing text, and if that change requires a change in the paralle
 When text highlighted by the translateme class is updated, and matches the recent changes in the other language, the class should be removed.
 
 
-###Markup tips###
+### Markup tips
 
 Here are some tips on how to maintain the parallel language structure in markup. The principles in these example approaches should be extended to other markup as needed.
 
@@ -78,7 +78,7 @@ For additional ideas about markup and styling in Internationalization Activity d
 http://www.w3.org/International/docs/styleguide
 
 
-###Pre-publication edits##
+### Pre-publication edits
 
 the following edits should be made to the snapshot of the file that will be published.
 
