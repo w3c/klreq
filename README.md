@@ -29,6 +29,7 @@ There is currently no Korean Layout Task Force.
 - Home Page (tbd)
 - Charter (tbd)
 - Action tracker (tbd)
+- [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - Meeting info (tbd)
 - [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
