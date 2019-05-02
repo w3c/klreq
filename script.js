@@ -1,50 +1,114 @@
-var switched = false;
 
-function switch2ko () {
-	if (switched) { alert('Refresh the page, then click on this button again.'); return; }
+function switchLang (lang) {
+// hides all elements with its-locale-filter-list set to the other language
+
+	var langs = { 'ko': true, 'en':true } // en must come last (for all to work in front matter)
+	if (lang==='ko') langs.en = false
+	if (lang==='en') langs.ko = false
+
+	var translations = {
+		'en': {
+			'abstract': 'Abstract',
+			'sotd': 'Status of This Document',
+			'toc': 'Table of Contents',
+			'note': 'Note',
+			'fig': 'Figure ',
+			'thisversion': 'This version:',
+			'latestpublished': 'Latest published version:',
+			'editorsdraft': "Latest editor's draft:",
+			'authors': 'Authors:',
+			'editors': "Editors:",
+			'formerEditors': "Former editors",
+			'participate': "Participate:",
+			'fileABug': "File a bug",
+			'commitHistory': "Commit history",
+			'pullRequests': "Pull requests"
+			},
+		'ko': {
+			'abstract': '추상',
+			'sotd': 'Status of This Document',
+			'toc': 'Table of Contents',
+			'note': 'Note',
+			'fig': 'Figure ',
+			'thisversion': 'This version:',
+			'latestpublished': 'Latest published version:',
+			'editorsdraft': "Latest editor's draft:",
+			'authors': 'Authors:',
+			'editors': "Editors:",
+			'formerEditors': "Former editors",
+			'participate': "Participate:",
+			'fileABug': "File a bug",
+			'commitHistory': "Commit history",
+			'pullRequests': "Pull requests"
+			},
+		}
 	
-	var en = document.querySelectorAll('[data-lang=en]')
-	for (var i=0;i<en.length;i++) en[i].style.display='none' 
-	document.getElementById('languageStyling').textContent=''
-	document.documentElement.lang = 'ko'
-	switched = true;
-	
-	// change boilerplate text
-	document.getElementById('h-abstract').textContent = '요약'
-	document.getElementById('h-sotd').textContent = '현재 문서의 상태'
-	document.getElementById('h-toc').textContent = '목차'
-	
-	var notes = document.querySelectorAll('.note-title')
-	for (i=0;i<notes.length;i++) notes[i].textContent = '주석'
-	var figcaptions = document.querySelectorAll('figcaption')
-	for (i=0;i<figcaptions.length;i++) figcaptions[i].firstChild.textContent = '그림 '
+	// show all hidden elements
+	var els = document.querySelectorAll('.hidden')
+	for (var i=0;i<els.length;i++) els[i].classList.remove('hidden') 
+
+	Object.keys(langs).forEach( function (lang) {
+		if (langs[lang]) {
+			// set the default language in html tag
+			document.documentElement.lang = lang
+			
+			// change boilerplate text
+			document.getElementById('abstract').firstChild.textContent = translations[lang].abstract
+			document.getElementById('sotd').firstChild.textContent = translations[lang].sotd
+			document.getElementById('table-of-contents').textContent = translations[lang].toc
+
+			document.getElementById('thisversion').textContent = translations[lang].thisversion
+			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
+			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
+			document.getElementById('editor').textContent = translations[lang].editors
+			document.getElementById('participate').textContent = translations[lang].participate
+			document.getElementById('fileABug').textContent = translations[lang].fileABug
+			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
+			document.getElementById('pullRequests').textContent = translations[lang].pullRequests
+			
+			// change note and figure titles
+			var notes = document.querySelectorAll('.note-title')
+			for (let i=0;i<notes.length;i++) notes[i].textContent = translations[lang].note
+			var figcaptions = document.querySelectorAll('figcaption')
+			for (let i=0;i<figcaptions.length;i++) figcaptions[i].firstChild.textContent = translations[lang].fig
+			}
+			
+		// hide relevant elements
+		else {
+			els = document.querySelectorAll('[its-locale-filter-list='+lang+']')
+			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
+			}
+		})
+	}
+
+
+
+function setFrontMatterIds () {
+	// adds ids to dt elements in front matter to facilitate language switching
 	
 	var dts = document.querySelectorAll('dt')
-	for (i=0;i<dts.length;i++) {
+	for (let i=0;i<dts.length;i++) {
 		switch (dts[i].textContent) {
-		case 'This version:': dts[i].textContent = '현재 버전:'; break;
-		case 'Latest published version:': dts[i].textContent = '최신 버전:'; break;
-		case 'Latest editor\'s draft:': dts[i].textContent = '최신 편집자 초안:'; break;
-		case 'Authors:': dts[i].textContent = '저자:'; break;
-		case 'Editor:': dts[i].textContent = '편집자:'; break;
-		case 'Bug tracker:': dts[i].textContent = '오류 추적:'; 
-			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/klreq/issues">오류 파일</a> (<a href="https://github.com/w3c/klreq/issues">오류 보기</a>)'; break;
-		case 'Github:': dts[i].textContent = '깃허브:'; 
-			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/klreq">저장소</a>'; break;
+			case 'This version:': dts[i].id = "thisversion"; break;
+			case 'Latest published version:': dts[i].id = "latestpublished"; break;
+			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
+			case 'Authors:': dts[i].id = "authors"; break;
+			case 'Editor:': dts[i].id = "editor"; break;
+			case 'Editors:': dts[i].id = "editors"; break;
+			case 'Participate:': dts[i].id = "participate"; break;
+			}
 		}
+	var anchors = document.querySelectorAll('.head a')
+	for (let i=0;i<anchors.length;i++) {
+		switch (anchors[i].textContent) {
+			case 'File a bug': anchors[i].id = "fileABug"; break;
+			case 'Commit history': anchors[i].id = "commitHistory"; break;
+			case 'Pull requests': anchors[i].id = "pullRequests"; break;
+			}
 		}
 	}
-	
-	
-function switch2en () {
-	if (switched) { alert('Refresh the page, then click on this button again.'); return; }
-	
-	var ko = document.querySelectorAll('[data-lang=ko]')
-	for (var i=0;i<ko.length;i++) ko[i].style.display='none' 
-	document.getElementById('languageStyling').textContent=''
-	document.documentElement.lang = 'en'
-	switched = true;
-	}
+
+
 
 
 function addLangAttrs () {
@@ -53,6 +117,26 @@ function addLangAttrs () {
 	// if there's already a lang attribute in the tag, that tag is skipped
 	// note that this may still produce temporarily incorrect labelling where text is awaiting translation
 	
-	var ko = document.querySelectorAll('[data-lang=ko]')
+	var ko = document.querySelectorAll('[its-locale-filter-list=ko]')
 	for (i=0;i<ko.length;i++) { if (ko[i].lang == '') { ko[i].lang='ko'} }
+	var en = document.querySelectorAll('[its-locale-filter-list=en]')
+	for (i=0;i<en.length;i++) { if (en[i].lang == '') { en[i].lang='en'} }
 	}
+
+
+function initialiseLang () {
+	// if a lang= parameter is passed with the URL, show in that language
+	var parameters = location.search.split('&')
+	parameters[0] = parameters[0].substring(1)
+	for (var p=0;p<parameters.length;p++) {  
+		var pairs = parameters[p].split('=')
+		if (pairs[0] === 'lang') { 
+			if (pairs[1]) { 
+				switchLang(pairs[1]) 
+				} 
+			}
+		}
+	}
+
+//figures = document.querySelectorAll('figure')
+//for (let i=0;i<figures.length;i++) console.log(figures[i].id)

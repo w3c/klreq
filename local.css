@@ -81,11 +81,21 @@ samp, kbd {
 	letter-spacing:0.03em;
 	}
 
+.translateme {
+	background-color: #F3F3C3;
+}
+.checkme {
+	background-color: #BBEFFC;
+}
+
 
 #langSwitch {
 	position: fixed;
-	top: -14px;
 	z-index: 10000;
+	top: 100px;
+	right: 10px;
+	width: 5em;
+	text-align: right;
 	}
 #langSwitch button {
 	background: #FFF none repeat scroll 0% 0%;
@@ -106,4 +116,7 @@ samp, kbd {
 	padding: 5px;
 	vertical-align: bottom;
 	text-align: start;
+	}
+.hidden {
+	display: none;
 	}
