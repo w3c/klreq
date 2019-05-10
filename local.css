@@ -14,6 +14,9 @@ h4  {
     color: #005a9c; 
     margin-top: 2em;  
     }
+h5 {
+  font-style: inherit !important;
+}
 .leadin {
 	font-weight: bold;
 	}
@@ -30,9 +33,14 @@ del {
 figure { 
 	margin-bottom: 2em; 
 	text-align: center;
+	vertical-align: top;
 	}
+figure img {
+	vertical-align: middle;
+    margin: 3em !important;
+  }
 figcaption {
-	 text-align: center;
+	text-align: center;
 	margin: 0.5em 2em;
 	font-style: italic;
 	font-size: 90%;
@@ -81,16 +89,10 @@ samp, kbd {
 	letter-spacing:0.03em;
 	}
 
-.translateme {
-	background-color: #F3F3C3;
-}
-.checkme {
-	background-color: #BBEFFC;
-}
-
 
 #langSwitch {
 	position: fixed;
+	top: -14px;
 	z-index: 10000;
 	top: 100px;
 	right: 10px;
@@ -117,6 +119,61 @@ samp, kbd {
 	vertical-align: bottom;
 	text-align: start;
 	}
+
+.translateme, .retranslateme {
+	background-color: #F3F3C3;
+}
+.checkme {
+	background-color: #BBEFFC;
+}
+
+a .fig-title { 
+	display: none;
+	}
+a .figno:after {
+	content: '';
+	}
+ol li {
+	list-style-type: lower-alpha;
+	}
+ol li li { 
+	list-style-type: decimal;
+	}
+ol li li li {
+	list-style-type: lower-roman;
+	}
 .hidden {
 	display: none;
 	}
+
+.checkme::before {
+    content: ' Check this translation: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.translateme::before {
+    content: ' Translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.retranslateme::before {
+    content: ' (Re)translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+
+
+
+
+
+
+
+
+
+
