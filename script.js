@@ -88,7 +88,7 @@ function setFrontMatterIds () {
 	
 	var dts = document.querySelectorAll('dt')
 	for (let i=0;i<dts.length;i++) {
-		switch (dts[i].textContent) {
+		switch (dts[i].textContent.trim()) {
 			case 'This version:': dts[i].id = "thisversion"; break;
 			case 'Latest published version:': dts[i].id = "latestpublished"; break;
 			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
@@ -111,7 +111,7 @@ function setFrontMatterIds () {
 
 
 
-function addLangAttrs () {
+function addLangAttrs () { console.log("THIS FUNCTION IS NO LONGER NEEDED")
 	// adds lang attributes wherever there is a data-lang attribute
 	// this is done by js to reduce burden on editors
 	// if there's already a lang attribute in the tag, that tag is skipped
