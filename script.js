@@ -26,19 +26,19 @@ function switchLang (lang) {
 			},
 		'ko': {
 			'abstract': '추상',
-			'sotd': 'Status of This Document',
-			'toc': 'Table of Contents',
-			'note': 'Note',
-			'fig': 'Figure ',
-			'thisversion': 'This version:',
-			'latestpublished': 'Latest published version:',
-			'editorsdraft': "Latest editor's draft:",
-			'authors': 'Authors:',
-			'editors': "Editors:",
-			'formerEditors': "Former editors",
-			'participate': "Participate:",
-			'fileABug': "File a bug",
-			'commitHistory': "Commit history",
+			'sotd': '문서 현황',
+			'toc': '개요',
+			'note': '참고',
+			'fig': '그림 ',
+			'thisversion': '현 버전:',
+			'latestpublished': '최신 출판 버전:',
+			'editorsdraft': "편집 초안:",
+			'authors': '저자:',
+			'editors': "편집자:",
+			'formerEditors': "이전 편집자",
+			'participate': "참여:",
+			'fileABug': "버그 등록",
+			'commitHistory': "커밋 기록",
 			'pullRequests': "Pull requests"
 			},
 		}
@@ -61,6 +61,7 @@ function switchLang (lang) {
 			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
 			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
 			document.getElementById('editor').textContent = translations[lang].editors
+			document.getElementById('authors').textContent = translations[lang].authors
 			document.getElementById('participate').textContent = translations[lang].participate
 			document.getElementById('fileABug').textContent = translations[lang].fileABug
 			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
