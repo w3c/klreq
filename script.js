@@ -25,9 +25,9 @@ function switchLang (lang) {
 			'pullRequests': "Pull requests"
 			},
 		'ko': {
-			'abstract': '추상',
+			'abstract': '개요',
 			'sotd': '문서 현황',
-			'toc': '개요',
+			'toc': '목차',
 			'note': '참고',
 			'fig': '그림 ',
 			'thisversion': '현 버전:',
