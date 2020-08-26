@@ -75,7 +75,7 @@ Use the following markup for Unicode codepoint names:
 ```
 
 For additional ideas about markup and styling in Internationalization Activity documents, especially wrt inline markup conventions, see
-http://www.w3.org/International/docs/styleguide
+https://www.w3.org/International/docs/styleguide
 
 
 ### Pre-publication edits
