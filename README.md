@@ -1,8 +1,7 @@
 # Requirements for Hangul Text Layout and Typography (klreq)
 
 ### Documents
-- [Editor's copy](https://w3c.github.io/klreq/)
-- [WG Note](https://www.w3.org/TR/klreq/)
+- Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항 • [Editor's copy](https://w3c.github.io/klreq/) • [WG Note](https://www.w3.org/TR/klreq/)
 
 The document contains both English and Korean versions of the text. Use the buttons at the top of the document window to select a single-language view.
 
