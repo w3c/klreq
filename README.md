@@ -9,7 +9,7 @@ The document contains both English and Korean versions of the text. Use the butt
 Please use the [GitHub issue list](https://github.com/w3c/klreq/issues) to send feedback about this document.
 
 ### Following
-Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about not only changes to this repository, but also about other W3C Working Group issues related to the Hangul writing systems. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-cjk.
+Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-korean](https://lists.w3.org/Archives/Public/public-i18n-korean/) mailing list. That list is notified once a day (in digest form) about not only changes to this repository, but also about other W3C Working Group issues related to the Hangul writing systems. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-korean.
 
 You can find a list of open issues, including those from W3C Working Groups, on the [Layout Tracker](https://w3c.github.io/i18n-activity/textlayout/?filter=hangul) page. (That link applies an `hangul` filter.)
 
@@ -31,7 +31,7 @@ There is currently no Korean Layout Task Force.
 - [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - Meeting info (tbd)
-- [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
+- [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-korean/)
 - Contacts: [Richard Ishida](mailto:ishida@w3.org)
 
 ### Links for editors
