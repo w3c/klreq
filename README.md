@@ -1,4 +1,4 @@
-# Requirements for Hangul Text Layout and Typography (klreq)
+# Korean Language Enablement (klreq)
 
 This is the place to explore gaps in support for Korean on the Web and in eBooks, and to document requirements.
 
