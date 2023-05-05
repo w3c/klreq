@@ -11,6 +11,17 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 [GitHub repo](https://github.com/w3c/klreq) • [Discussion threads](https://github.com/w3c/klreq/issues) • [Issue tracker](https://www.w3.org/International/i18n-activity/textlayout/?filter=klreq) (with klreq filter)
 
 
+---
+## Help wanted! ###
+**We're looking for information about this writing system. Follow the link for specific questions.**
+
+**[Korean](https://github.com/w3c/klreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)**
+
+---
+
+
+
+
 ### Documents
 - [**Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항**](https://www.w3.org/TR/klreq) • [*Editor's draft*](https://www.w3.org/International/klreq/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/index.html)
 
