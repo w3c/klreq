@@ -5,17 +5,13 @@
 <title>Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항</title>
 
 <link rel="stylesheet" href="local.css" />
+<link rel="stylesheet" href="print.css" />
 
 <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
 <script src="script.js"></script>
-<!-- 
-      === NOTA BENE ===
-      For the three scripts below, if your spec resides on dev.w3 you can check them
-      out in the same tree and use relative links so that they will work offline,
-     -->
+
 <script class="remove">
       var respecConfig = {
-          useExperimentalStyles: true,
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:           "ED",
           //publishDate:  		"2020-05-27",
@@ -29,25 +25,22 @@
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://w3c.github.io/klreq/",
 
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
-
           // authors, add as many as you like. 
           // This is optional, uncomment if you have authors as well as editors.
           // only "name" is required. Same format as editors.
 
           authors:  [
-              { name: "임순범 (Soon-Bum Lim)", url: "",
-                company: "숙명여자대학교 (Sookmyung Women's University)", companyURL: "" },
-              { name: "심우진 (Wu-Jin Sim)", url: "",
+              { name: "<span lang='ko'>임순범</span> (Soon-Bum Lim)", url: "",
+                company: "<span lang='ko'>숙명여자대학교</span> (Sookmyung Women's University)", companyURL: "" },
+              { name: "<span lang='ko'>심우진</span> (Wu-Jin Sim)", url: "",
                 company: "Invited Expert", companyURL: "" },
-              { name: "이용제 (Yong-Je Lee)", url: "",
-                company: "계원예술대학교 (Kaywon School of Art &amp; Design)", companyURL: "" },
-              { name: "남동선 (Dongsun Nam)", url: "",
-                company: "㈜한글과컴퓨터 (Hancom Inc.)", companyURL: "" },
-              { name: "김현영 (HyunYoung Kim)", url: "",
-                company: "㈜다우인큐브 (DAOUinCUBE, Inc.)", companyURL: "" },
-              { name: "임용호 (YongHo Lim)", url: "",
+              { name: "<span lang='ko'>이용제</span> (Yong-Je Lee)", url: "",
+                company: "<span lang='ko'>계원예술대학교</span> (Kaywon School of Art &amp; Design)", companyURL: "" },
+              { name: "<span lang='ko'>남동선</span> (Dongsun Nam)", url: "",
+                company: "<span lang='ko'>㈜한글과컴퓨터</span> (Hancom Inc.)", companyURL: "" },
+              { name: "<span lang='ko'>김현영</span> (HyunYoung Kim)", url: "",
+                company: "<span lang='ko'>㈜다우인큐브</span> (DAOUinCUBE, Inc.)", companyURL: "" },
+              { name: "<span lang='ko'>임용호</span> (YongHo Lim)", url: "",
                 company: "School of Visual Art", companyURL: "" },
           ],
           
@@ -58,7 +51,7 @@
 
           group: "i18n",
 
-          //wgPublicList: "public-i18n-cjk",
+      wgPublicList: "public-i18n-korean",
 		  github: "w3c/klreq",
 		  
 		  
@@ -66,16 +59,15 @@
       };
     </script>
 </head>
-<body onload="setFrontMatterIds(); initialiseLang()">
+
+<body>
+<h1 class="title p-name" id="title">Requirements for Hangul Text Layout and Typography<br/><span lang="ko">한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항</span></h1>
 <div id="abstract">
   <p its-locale-filter-list="en" lang="en">This document describes requirements for general Korean language/Hangul text layout and typography realized with technologies like CSS, SVG and XSL-FO. The document is mainly based on a project to develop the international standard for Korean text layout.</p>
   <p its-locale-filter-list="ko" lang="ko">이 문서는 CSS, SVG, XSL-FO 등의 기술에서 구현되는 일반적인 한국어/한글 텍스트 레이아웃과 타이포그래피를 위한 요구사항을 기술하고 있다. 이 문서는 한글 텍스트 레이아웃에 대한 국제표준안 제안과제에 근거하고 있다.</p>
 </div>
 <div id="sotd">
   <p>This document describes requirements for general Korean language/Hangul text layout realized with technologies like CSS, SVG and XSL-FO. The document is mainly based on a project to develop the international standard for Korean text layout, and was originally developed by Korean typographic experts and standardization experts in Korean, then translated to English under the guidance of the authors. The English version is the authoritative version. The Working Group expects this document to become a Working Group Note.</p>
-  <div class="note">
-<p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on using  a URL for the dated version of the document.</p>
-  </div>
 
   <p id="langSwitch">
     <button onclick="switchLang('ko')">한국어</button>
