@@ -44,6 +44,8 @@ You can participate in the work at various levels. In order of increasing commit
 
 **To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-i18n-korean-request@w3.org?subject=subscribe) to the [public-i18n-korean](https://lists.w3.org/Archives/Public/public-i18n-korean/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Korean writing systems.
 
+If you prefer to receive notifications of all discussions for Chinese, Japanese, and Korean languages,  [subscribe](mailto:public-i18n-cjk-request@w3.org?subject=subscribe) to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list.
+
 **To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **To become a participant, editor, or chair:** contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
@@ -58,7 +60,8 @@ To get an idea about what's involved, see  [Get involved with Language Enablemen
 
 
 ### Links
-- [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-korean/)
+- [public-i18n-korean mail archive](https://lists.w3.org/Archives/Public/public-i18n-korean/)
+- [public-i18n-cjk mail archive](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
 - [Writing i18n tests]([https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests](https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests))
 - [Practical tips for task forces](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 
