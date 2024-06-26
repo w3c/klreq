@@ -8,7 +8,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 ### Key links
-[GitHub repo](https://github.com/w3c/klreq) • [Discussion threads](https://github.com/w3c/klreq/issues) • [Issue tracker](https://www.w3.org/International/i18n-activity/textlayout/?filter=klreq) (with klreq filter)
+[GitHub repo](https://github.com/w3c/klreq) • [Discussion threads](https://github.com/w3c/klreq/issues)
 
 
 ---
