@@ -1466,8 +1466,8 @@
 
 <ol>
 <li>
-<p its-locale-filter-list="en" lang="en">All the cases mentioned in 4.3.6.</p>
-<p its-locale-filter-list="ko" lang="ko">4.3.6에서 언급한 모든 경우</p>
+<p its-locale-filter-list="en" lang="en">All the cases mentioned in [[[#word-break-rest]]].</p>
+<p its-locale-filter-list="ko" lang="ko">[[[#word-break-rest]]]에서 언급한 모든 경우</p>
 </li>
 
 <li>
@@ -1812,7 +1812,7 @@
 <span its-locale-filter-list="ko" lang="ko" class="translateme">Lists, counters, etc.</span>
 </h3>
 
-<p>TBD(?)</p>
+<p class="tbd" lang="en">TBD. See <a href="https://www.w3.org/TR/predefined-counter-styles/#korean-styles">Ready-made Counter Styles</a> Are there other counter styles in use? Are there preferred styles for particular contexts? Are the correct separators available for use after list counters? Are there other aspects related to counters and lists that need to be addressed? How do list counters differ for use with vertical text?</p>
 </section>
 
 
@@ -1830,7 +1830,7 @@
 <span its-locale-filter-list="ko" lang="ko" class="translateme">Styling initials</span>
 </h3>
 
-<p>TBD(?)</p>
+<p class="tbd" lang="en">TBD. Does Korean use large font sizes for initial characters in an article or section? If so, is the height typically dropped into the paragraph or does it create a larger pre-paragraph gap?  What is the size relationship between the large letter(s) and the lines alongside? Where does the large letter anchor relative to the lines alongside? Is it normal to include initial quote marks or other punctuation in the large letter? Is the large letter sometimes a sequence of letters?</p>
 </section>
 
 </section>
@@ -2014,176 +2014,6 @@
 
 
 
-
-<section id="tabs">
-<h3><span its-locale-filter-list="en" lang="en">Tabs</span> <span its-locale-filter-list="ko" lang="ko">탭</span></h3>
-
-
-
-<section id="using-tabs">
-<h4><span its-locale-filter-list="en" lang="en">Using Tabs</span> <span its-locale-filter-list="ko" lang="ko">탭 사용하기</span></h4>
-
-<p its-locale-filter-list="en" lang="en">The position of a tab and the alignment method (tab type) are specified, then the tab code is entered before the character or the word in the specified position.</p>
-<p its-locale-filter-list="ko" lang="ko">탭 위치와 정렬 방식(탭 종류)을 지정하며, 지정 위치에 배치할 문자, 단어 앞에 탭 문자를 입력해 두어야 한다. </p>
-</section>
-
-
-
-
-<section id="tab-align">
-<h4><span its-locale-filter-list="en" lang="en">Aligning at Specified Tab Position</span> <span its-locale-filter-list="ko" lang="ko">탭에서 지정한 위치에 정렬하기</span></h4>
-
-<p its-locale-filter-list="en" lang="en">Adjustment mode (tab type) is specified at the tab position.</p>
-<p its-locale-filter-list="ko" lang="ko">탭 위치에 정렬 방식(탭 종류)을 지정한다. </p>
-
-<ol>
-<li>
-<p its-locale-filter-list="en" lang="en">(Upper) left corner adjustment tab: in horizontal writing, the left end of characters/words is aligned to the tab position, and in vertical writing, the top end is aligned.</p>
-<p its-locale-filter-list="ko" lang="ko">왼(위)쪽 정렬 탭: 가로짜기의 경우, 탭에 정렬할 문자/단어의 왼쪽 끝을 탭 위치에 정렬하며, 세로짜기의 경우 위쪽 끝을 정렬한다.</p>
-
-<figure> <img its-locale-filter-list="en" lang="en" src="images/4-24.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-24.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Left tab.</span> <span its-locale-filter-list="ko" lang="ko">왼쪽 탭</span></figcaption>
-</figure>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">(Bottom) right corner adjustment tab: in horizontal writing, the right end of characters/words is aligned to the tab position, and in vertical writing, the bottom end is aligned.</p>
-<p its-locale-filter-list="ko" lang="ko">오른(아래)쪽 정렬 탭: 가로짜기의 경우, 탭에 정렬할 문자/단어의 오른쪽 끝을 탭 위치에 정렬하며, 세로짜기의 경우 아래쪽 끝을 정렬한다.</p>
-
-<figure> <img its-locale-filter-list="en" lang="en" src="images/4-25.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-25.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Right tab.</span> <span its-locale-filter-list="ko" lang="ko">오른쪽 탭</span></figcaption>
-</figure>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Center adjustment tab: the center of characters/words is aligned to the tab position.</p>
-<p its-locale-filter-list="ko" lang="ko">가운데 정렬 탭: 탭에 정렬할 문자/단어의 가운데 지점을 탭 위치에 정렬한다.</p>
-<figure> <img its-locale-filter-list="en" lang="en" src="images/4-26.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-26.png" alt="" />
-
-<figcaption><span its-locale-filter-list="en" lang="en">Center tab.</span> <span its-locale-filter-list="ko" lang="ko">가운데 탭</span></figcaption>
-</figure>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Specific character adjustment tab: the front end of a specific character in characters/words is aligned to the tab position.</p>
-<p its-locale-filter-list="ko" lang="ko">지정문자 정렬 탭:  탭에 정렬할 문자/단어에서 특정 문자의 앞쪽 지점을 탭 위치에 정렬한다.</p>
-
-<figure> <img its-locale-filter-list="en" lang="en" src="images/4-27.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-27.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Specific character tab.</span> <span its-locale-filter-list="ko" lang="ko">특정 문자 탭</span></figcaption>
-</figure>
-</li>
-</ol>
-</section>
-</section>
-</section>
-
-
-
-
-
-
-
-
-
-<section id="h_grids_tables">
-<h3>
-<span its-locale-filter-list="en" lang="en">Grids &amp; tables</span>
-<span its-locale-filter-list="ko" lang="ko" class="translateme">Grids &amp; tables</span>
-</h3>
-
-
-<section id="tables">
-<h3><span its-locale-filter-list="en" lang="en">Tables</span> <span its-locale-filter-list="ko" lang="ko">표 (Table)</span></h3>
-
-<p its-locale-filter-list="en" lang="en">Tables are composed of cells, and each cell can be configured into various forms as shown below.</p>
-<p its-locale-filter-list="ko" lang="ko">표는 기본적으로 셀로 구성되어 있으며, 각 셀은 다음과 같이 다양한 형태로 구성될 수 있다.</p>
-
-<figure> <img src="ko/images/5-22.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Examples of table composition.</span> <span its-locale-filter-list="ko" lang="ko">표 구성 예</span></figcaption>
-</figure>
-
-
-
-
-<section id="table-cell">
-<h4><span its-locale-filter-list="en" lang="en">Cells</span> <span its-locale-filter-list="ko" lang="ko">셀(Cell)</span></h4>
-
-<p its-locale-filter-list="en" lang="en"> Cells can be selected individually and have various settings.</p>
-<p its-locale-filter-list="ko" lang="ko">원하는 셀들만 선택하여 아래와 같이 여러 가지 값을 설정한다.</p>
-
-<ol>
-<li>
-<p its-locale-filter-list="en" lang="en">Font and paragraph format of the cell</p>
-<p its-locale-filter-list="ko" lang="ko">셀의 글자와 문단 형식</p>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Border and background style</p>
-<p its-locale-filter-list="ko" lang="ko">테두리/배경의 모양</p>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Merging and dividing cells</p>
-<p its-locale-filter-list="ko" lang="ko">셀을 합치거나 나누기</p>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Size and margin adjusting</p>
-<p its-locale-filter-list="ko" lang="ko">크기 및 여백 조절</p>
-</li>
-
-<li>
-<p its-locale-filter-list="en" lang="en">Space between cells</p>
-<p its-locale-filter-list="ko" lang="ko">셀 간의 간격</p>
-</li>
-</ol>
-
-<figure> <img src="ko/images/5-23.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Example of spacing between cells.</span> <span its-locale-filter-list="ko" lang="ko">셀 간격이 적용된 표현 예</span></figcaption>
-</figure>
-</section>
-
-
-
-
-<section id="inner-padding">
-<h4><span its-locale-filter-list="en" lang="en">Inner Padding of a Table/Cell</span> <span its-locale-filter-list="ko" lang="ko">표/셀 안쪽 여백</span></h4>
-
-<p its-locale-filter-list="en" lang="en"> If inner padding space is applied to both table and cell, the value is applied to the cell prior to that of the table. The size of table does not change even if the value of inner padding is high.</p>
-<p its-locale-filter-list="ko" lang="ko">표와 셀에는 안쪽 여백이 지정되면, 표에 적용된 값보다 셀에 적용된 값이 우선하여 반영되며, 안쪽 여백 값을 크게 주더라도 표의 크기는 변하지 않는다.</p>
-</section>
-
-
-
-
-
-<section id="diagonal-lines">
-<h4><span its-locale-filter-list="en" lang="en">Diagonal lines in tables</span> <span its-locale-filter-list="ko" lang="ko">표 대각선</span></h4>
-
-<figure> <img src="ko/images/5-24.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Diagonal lines in a cell of a table.</span> <span its-locale-filter-list="ko" lang="ko">표의 셀에 대한 대각선</span></figcaption>
-</figure>
-
-<figure> <img src="ko/images/5-25.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Diagonal lines in through multiple cells.</span> <span its-locale-filter-list="ko" lang="ko">여러 셀에 걸친 대각선</span></figcaption>
-</figure>
-</section>
-
-
-
-
-
-<section id="table-background">
-<h4><span its-locale-filter-list="en" lang="en">Background of Table</span> <span its-locale-filter-list="ko" lang="ko">표 배경</span></h4>
-
-<p its-locale-filter-list="en" lang="en"> The background of table and cell can be color, gradation, or background images.</p>
-<p its-locale-filter-list="ko" lang="ko">표와 셀의 배경을 색, 그라데이션, 배경 그림 등으로 정의한다.</p>
-
-<figure> <img its-locale-filter-list="en" lang="en" src="images/5-26.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/5-26.png" alt="" />
-<figcaption><span its-locale-filter-list="en" lang="en">Example of background in tables.</span> <span its-locale-filter-list="ko" lang="ko">표 배경 적용 예</span></figcaption>
-</figure>
-</section>
-</section>
 
 
 
@@ -2442,6 +2272,184 @@
 </figure>
 </section>
 </section>
+
+
+
+
+
+
+
+
+
+<section id="tabs">
+<h3><span its-locale-filter-list="en" lang="en">Tabs</span> <span its-locale-filter-list="ko" lang="ko">탭</span></h3>
+
+
+
+<section id="using-tabs">
+<h4><span its-locale-filter-list="en" lang="en">Using Tabs</span> <span its-locale-filter-list="ko" lang="ko">탭 사용하기</span></h4>
+
+<p its-locale-filter-list="en" lang="en">The position of a tab and the alignment method (tab type) are specified, then the tab code is entered before the character or the word in the specified position.</p>
+<p its-locale-filter-list="ko" lang="ko">탭 위치와 정렬 방식(탭 종류)을 지정하며, 지정 위치에 배치할 문자, 단어 앞에 탭 문자를 입력해 두어야 한다. </p>
+</section>
+
+
+
+
+<section id="tab-align">
+<h4><span its-locale-filter-list="en" lang="en">Aligning at Specified Tab Position</span> <span its-locale-filter-list="ko" lang="ko">탭에서 지정한 위치에 정렬하기</span></h4>
+
+<p its-locale-filter-list="en" lang="en">Adjustment mode (tab type) is specified at the tab position.</p>
+<p its-locale-filter-list="ko" lang="ko">탭 위치에 정렬 방식(탭 종류)을 지정한다. </p>
+
+<ol>
+<li>
+<p its-locale-filter-list="en" lang="en">(Upper) left corner adjustment tab: in horizontal writing, the left end of characters/words is aligned to the tab position, and in vertical writing, the top end is aligned.</p>
+<p its-locale-filter-list="ko" lang="ko">왼(위)쪽 정렬 탭: 가로짜기의 경우, 탭에 정렬할 문자/단어의 왼쪽 끝을 탭 위치에 정렬하며, 세로짜기의 경우 위쪽 끝을 정렬한다.</p>
+
+<figure> <img its-locale-filter-list="en" lang="en" src="images/4-24.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-24.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Left tab.</span> <span its-locale-filter-list="ko" lang="ko">왼쪽 탭</span></figcaption>
+</figure>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">(Bottom) right corner adjustment tab: in horizontal writing, the right end of characters/words is aligned to the tab position, and in vertical writing, the bottom end is aligned.</p>
+<p its-locale-filter-list="ko" lang="ko">오른(아래)쪽 정렬 탭: 가로짜기의 경우, 탭에 정렬할 문자/단어의 오른쪽 끝을 탭 위치에 정렬하며, 세로짜기의 경우 아래쪽 끝을 정렬한다.</p>
+
+<figure> <img its-locale-filter-list="en" lang="en" src="images/4-25.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-25.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Right tab.</span> <span its-locale-filter-list="ko" lang="ko">오른쪽 탭</span></figcaption>
+</figure>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Center adjustment tab: the center of characters/words is aligned to the tab position.</p>
+<p its-locale-filter-list="ko" lang="ko">가운데 정렬 탭: 탭에 정렬할 문자/단어의 가운데 지점을 탭 위치에 정렬한다.</p>
+<figure> <img its-locale-filter-list="en" lang="en" src="images/4-26.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-26.png" alt="" />
+
+<figcaption><span its-locale-filter-list="en" lang="en">Center tab.</span> <span its-locale-filter-list="ko" lang="ko">가운데 탭</span></figcaption>
+</figure>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Specific character adjustment tab: the front end of a specific character in characters/words is aligned to the tab position.</p>
+<p its-locale-filter-list="ko" lang="ko">지정문자 정렬 탭:  탭에 정렬할 문자/단어에서 특정 문자의 앞쪽 지점을 탭 위치에 정렬한다.</p>
+
+<figure> <img its-locale-filter-list="en" lang="en" src="images/4-27.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/4-27.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Specific character tab.</span> <span its-locale-filter-list="ko" lang="ko">특정 문자 탭</span></figcaption>
+</figure>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="h_grids_tables">
+<h3>
+<span its-locale-filter-list="en" lang="en">Grids &amp; tables</span>
+<span its-locale-filter-list="ko" lang="ko" class="translateme">Grids &amp; tables</span>
+</h3>
+
+
+<section id="tables">
+<h3><span its-locale-filter-list="en" lang="en">Tables</span> <span its-locale-filter-list="ko" lang="ko">표 (Table)</span></h3>
+
+<p its-locale-filter-list="en" lang="en">Tables are composed of cells, and each cell can be configured into various forms as shown below.</p>
+<p its-locale-filter-list="ko" lang="ko">표는 기본적으로 셀로 구성되어 있으며, 각 셀은 다음과 같이 다양한 형태로 구성될 수 있다.</p>
+
+<figure> <img src="ko/images/5-22.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Examples of table composition.</span> <span its-locale-filter-list="ko" lang="ko">표 구성 예</span></figcaption>
+</figure>
+
+
+
+
+<section id="table-cell">
+<h4><span its-locale-filter-list="en" lang="en">Cells</span> <span its-locale-filter-list="ko" lang="ko">셀(Cell)</span></h4>
+
+<p its-locale-filter-list="en" lang="en"> Cells can be selected individually and have various settings.</p>
+<p its-locale-filter-list="ko" lang="ko">원하는 셀들만 선택하여 아래와 같이 여러 가지 값을 설정한다.</p>
+
+<ol>
+<li>
+<p its-locale-filter-list="en" lang="en">Font and paragraph format of the cell</p>
+<p its-locale-filter-list="ko" lang="ko">셀의 글자와 문단 형식</p>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Border and background style</p>
+<p its-locale-filter-list="ko" lang="ko">테두리/배경의 모양</p>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Merging and dividing cells</p>
+<p its-locale-filter-list="ko" lang="ko">셀을 합치거나 나누기</p>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Size and margin adjusting</p>
+<p its-locale-filter-list="ko" lang="ko">크기 및 여백 조절</p>
+</li>
+
+<li>
+<p its-locale-filter-list="en" lang="en">Space between cells</p>
+<p its-locale-filter-list="ko" lang="ko">셀 간의 간격</p>
+</li>
+</ol>
+
+<figure> <img src="ko/images/5-23.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Example of spacing between cells.</span> <span its-locale-filter-list="ko" lang="ko">셀 간격이 적용된 표현 예</span></figcaption>
+</figure>
+</section>
+
+
+
+
+<section id="inner-padding">
+<h4><span its-locale-filter-list="en" lang="en">Inner Padding of a Table/Cell</span> <span its-locale-filter-list="ko" lang="ko">표/셀 안쪽 여백</span></h4>
+
+<p its-locale-filter-list="en" lang="en"> If inner padding space is applied to both table and cell, the value is applied to the cell prior to that of the table. The size of table does not change even if the value of inner padding is high.</p>
+<p its-locale-filter-list="ko" lang="ko">표와 셀에는 안쪽 여백이 지정되면, 표에 적용된 값보다 셀에 적용된 값이 우선하여 반영되며, 안쪽 여백 값을 크게 주더라도 표의 크기는 변하지 않는다.</p>
+</section>
+
+
+
+
+
+<section id="diagonal-lines">
+<h4><span its-locale-filter-list="en" lang="en">Diagonal lines in tables</span> <span its-locale-filter-list="ko" lang="ko">표 대각선</span></h4>
+
+<figure> <img src="ko/images/5-24.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Diagonal lines in a cell of a table.</span> <span its-locale-filter-list="ko" lang="ko">표의 셀에 대한 대각선</span></figcaption>
+</figure>
+
+<figure> <img src="ko/images/5-25.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Diagonal lines in through multiple cells.</span> <span its-locale-filter-list="ko" lang="ko">여러 셀에 걸친 대각선</span></figcaption>
+</figure>
+</section>
+
+
+
+
+
+<section id="table-background">
+<h4><span its-locale-filter-list="en" lang="en">Background of Table</span> <span its-locale-filter-list="ko" lang="ko">표 배경</span></h4>
+
+<p its-locale-filter-list="en" lang="en"> The background of table and cell can be color, gradation, or background images.</p>
+<p its-locale-filter-list="ko" lang="ko">표와 셀의 배경을 색, 그라데이션, 배경 그림 등으로 정의한다.</p>
+
+<figure> <img its-locale-filter-list="en" lang="en" src="images/5-26.png" alt="" /> <img its-locale-filter-list="ko" lang="ko" src="ko/images/5-26.png" alt="" />
+<figcaption><span its-locale-filter-list="en" lang="en">Example of background in tables.</span> <span its-locale-filter-list="ko" lang="ko">표 배경 적용 예</span></figcaption>
+</figure>
+</section>
+</section>
 </section>
 
 
@@ -2677,7 +2685,7 @@
 <span its-locale-filter-list="ko" lang="ko" class="translateme">Forms &amp; user interaction</span>
 </h3>
 
-
+<p class="tbd" lang="en">Are vertical form controls well supported? Are there other aspects related to user interaction that need to be addressed?</p>
 </section>
 </section>
 
@@ -2705,7 +2713,7 @@
 ============================================================================================-->
 
 
-
+<!--
 <p> ========================================================================================
 <p>        OLD CONTENT
 <p>============================================================================================
@@ -2871,7 +2879,7 @@
 
 
     
-    <!--section id="space-paren">
+    <!- -section id="space-paren">
     <h4><span its-locale-filter-list="ko" lang="ko"></span>
     <span its-locale-filter-list="en" lang="en">Principles for Space Adjustment around Parentheses</span></h4>
 
@@ -2893,17 +2901,12 @@
       <p class="issue">See <a href="https://www.w3.org/International/track/issues/264">https://www.w3.org/International/track/issues/264</a></p>
     </li>
     </ol>
-  </section-->
+  </section- ->
 
 
 
 
-
-
-
-
-
-  </section>
+</section>
 
 
 
@@ -2937,7 +2940,7 @@
 
 
 </section>
-
+-->
 
 
 
