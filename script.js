@@ -112,10 +112,29 @@
         }
       });
     }
+    function updateTOCLang() {
+      // Show the same arrow appearance regardless of the languages
+      const arrowSpans = document.querySelectorAll("#toc-nav a span:first-child");
+      arrowSpans.forEach(el => {
+        if (!el.hasAttribute("lang")) {
+          el.setAttribute("lang", "en");
+        }
+      });
+      // Register an MutationObserver for the language sync
+      const tocNav = document.querySelector("#toc-nav");
+      if (tocNav && tocNav.dataset.isObserved !== "true") {
+        const tocNavObserver = new MutationObserver(() => {
+          updateTOCLang();
+        });
+        tocNavObserver.observe(tocNav, { childList: true, subtree: true, attributes: true });
+        tocNav.dataset.isObserved = "true";
+      }
+    }
     window.switchLang = function(lang) {
       toggle$rootClass(lang);
       showAndHideLang(lang);
       replaceBoilerplateText(lang);
+      updateTOCLang();
     };
     function addLangAttr() {
       toggle$rootClass("all");
