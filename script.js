@@ -11,7 +11,7 @@
           "#sotd > h2": "Status of This Document",
           "#toc > ol > li:nth-child(2) > a": "Status of This Document",
           "#table-of-contents": "Table of Contents",
-          ".note-title": "Note",
+          ".note-title": "Note"
         },
         "fig": "Fig. ",
         dt: {},
