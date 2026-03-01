@@ -17,6 +17,11 @@
         dt: {},
         dd: {
           "Bug tracker:": '<a href="https://github.com/w3c/klreq/issues">file a bug</a> (<a href="https://github.com/w3c/klreq/issues">open bugs</a>)'
+        },
+        toc: {
+          "toc-collapse-text": "Collapse Sidebar",
+          "toc-expand-text": "Pop Out Sidebar",
+          "toc-jump-text": "Jump to Table of Contents"
         }
       },
       "ko": {
@@ -46,6 +51,11 @@
         },
         dd: {
           'Bug tracker:': '<a href="https://github.com/w3c/klreq/issues">file a bug</a> (<a href="https://github.com/w3c/klreq/issues">open bugs</a>)',
+        },
+        toc: {
+          "toc-collapse-text": "사이드바 접기",
+          "toc-expand-text": "사이드바 펼치기",
+          "toc-jump-text": "목차로 이동"
         }
       }
     };
@@ -112,19 +122,32 @@
         }
       });
     }
-    function updateTOCLang() {
-      // Show the same arrow appearance regardless of the languages
+    function updateTOCLang(lang) {
+      // Show the same arrow appearance regardless of the languages.
       const arrowSpans = document.querySelectorAll("#toc-nav a span:first-child");
-      arrowSpans.forEach(el => {
-        if (!el.hasAttribute("lang")) {
-          el.setAttribute("lang", "en");
+      arrowSpans.forEach(arrowSpan => {
+        if (!arrowSpan.hasAttribute("lang")) {
+          arrowSpan.setAttribute("lang", "en");
+        }
+      });
+
+      // Show appropriate languages for the TOC navigation text
+      const l10n = L10N[lang === "all" ? "en" : lang]["toc"];
+      const textSpans = document.querySelectorAll('#toc-nav a span:last-child');
+      textSpans.forEach(textSpan => {
+        const id = textSpan.id;
+        if (id in l10n && textSpan.textContent !== l10n[id]) {
+          textSpan.textContent = l10n[id];
         }
       });
       // Register an MutationObserver for the language sync
       const tocNav = document.querySelector("#toc-nav");
       if (tocNav && tocNav.dataset.isObserved !== "true") {
         const tocNavObserver = new MutationObserver(() => {
-          updateTOCLang();
+          const currentLang = $root.lang || "en";
+          if (currentLang !== "en") {
+            updateTOCLang(currentLang);
+          }
         });
         tocNavObserver.observe(tocNav, { childList: true, subtree: true, attributes: true });
         tocNav.dataset.isObserved = "true";
@@ -134,7 +157,7 @@
       toggle$rootClass(lang);
       showAndHideLang(lang);
       replaceBoilerplateText(lang);
-      updateTOCLang();
+      updateTOCLang(lang)
     };
     function addLangAttr() {
       toggle$rootClass("all");
