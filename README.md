@@ -22,20 +22,18 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 
-### Resource & requirement docs
+### Korean
 - **Korean Script Resources** • [DNOTE](https://www.w3.org/TR/kore-lreq) • [*Editor's draft*](https://www.w3.org/International/klreq/kore/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/kore/)
-- **Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항** • [DNOTE](https://www.w3.org/TR/klreq) • [*Editor's draft*](https://www.w3.org/International/klreq/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/index.html)
-
-The document contains both English and Korean versions of the text. Use the buttons at the top of the document window to select a single-language view.
-
-
-
-### Gap-analysis docs
+- **Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항** • [DNOTE](https://www.w3.org/TR/klreq) • [*Editor's draft*](https://www.w3.org/International/klreq/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/index.html) The document contains both English and Korean versions of the text. Use the buttons at the top of the document window to select a single-language view.
 - **Korean Gap Analysis** • [DNOTE](https://www.w3.org/TR/kore-gap) • [*Editor's draft*](https://www.w3.org/International/klreq/gap-analysis/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/gap-anaylsis/index.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/klreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/klreq/labels/doc%3Aklreq)
+• [*Other*](https://github.com/w3c/klreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Aklreq+label%3Aspec-type-issue)
 
 
 
-### Related documents
+### Other documents
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
 
 
