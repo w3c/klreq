@@ -21,7 +21,6 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 
-
 ### Korean
 - **Korean Script Resources** • [DNOTE](https://www.w3.org/TR/kore-lreq) • [*Editor's draft*](https://www.w3.org/International/klreq/kore/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/kore/)
 - **Requirements for Hangul Text Layout and Typography : 한국어 텍스트 레이아웃 및 타이포그래피를 위한 요구사항** • [DNOTE](https://www.w3.org/TR/klreq) • [*Editor's draft*](https://www.w3.org/International/klreq/) • [*Latest commits*](https://github.com/w3c/klreq/commits/gh-pages/index.html) The document contains both English and Korean versions of the text. Use the buttons at the top of the document window to select a single-language view.
