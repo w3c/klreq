@@ -78,18 +78,23 @@
       }
     }
     function showAndHideLang(lang) {
-      $$hidden.forEach(function($elmt) {
-        Object.assign($elmt, { hidden: false });
+      // Unhide everything first
+      LANG_LIST.forEach(function(it) {
+        $$('[its-locale-filter-list="' + it + '"]').forEach(function($elmt) {
+          $elmt.hidden = false;
+        });
       });
-      if (lang === "all") {
-        return;
-      }
-      $$hidden = LANG_LIST.filter(function(it) {
-        return it !== lang;
-      }).reduce(function(result, it) {
-        return result.concat($$('[its-locale-filter-list="' + it + '"]'));
-      }, []).map(function($elmt) {
-        return Object.assign($elmt, { hidden: true });
+
+      // If "all", stop here
+      if (lang === "all") return;
+
+      // Hide all languages except the chosen one
+      LANG_LIST.forEach(function(it) {
+        if (it !== lang) {
+          $$('[its-locale-filter-list="' + it + '"]').forEach(function($elmt) {
+            $elmt.hidden = true;
+          });
+        }
       });
     }
     function replaceBoilerplateText(lang) {
